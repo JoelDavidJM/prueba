@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSS Aventura para Niños</title>
+    <title>Quiz CSS - Sobre de Amor</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -704,11 +704,11 @@
     <div class="container">
         <!-- Pantalla de inicio -->
         <div class="start-screen" id="start-screen">
-            <h1 class="start-title">Programación Aventura</h1>
-            <p class="start-subtitle">¡Aprende CSS Básico Divirtiéndote!</p>
+            <h1 class="start-title">💌 Quiz del Sobre de Amor 💌</h1>
+            <p class="start-subtitle">¡Aprende CSS con el Código del Sobre!</p>
             
             <div class="character">
-                <i class="fas fa-laptop-code"></i>
+                <i class="fas fa-heart"></i>
             </div>
             
             <button class="btn-start" id="btn-start">
@@ -732,7 +732,7 @@
             
             <div class="question-card">
                 <div class="question-number" id="question-number">1</div>
-                <div class="question-text" id="question-text">¿Qué hace el selector *::after y *::before?</div>
+                <div class="question-text" id="question-text">Cargando pregunta...</div>
             </div>
             
             <div class="options-container" id="options-container">
@@ -774,114 +774,114 @@
         
         const questions = [
             {
-                question: "¿Qué hace 'margin: 0' en CSS?",
+                question: "En el sobre, ¿qué hace 'position: absolute'?",
                 options: [
-                    "Cambia el color a cero",
-                    "Elimina todo el espacio exterior del elemento",
-                    "Hace el elemento invisible",
-                    "Aumenta el tamaño del elemento"
+                    "Centra el elemento automáticamente",
+                    "Permite posicionar el elemento en coordenadas específicas",
+                    "Hace que el elemento sea invisible",
+                    "Cambia el color del elemento"
                 ],
                 correct: 1,
-                explanation: "¡Genial! ⭐ margin: 0 elimina TODO el espacio exterior, ¡como quitar el marco alrededor de una foto!"
+                explanation: "¡Genial! 📌 position: absolute permite posicionar elementos usando top, left, right, bottom. En el sobre se usa para el corazón, el sello y el texto."
             },
             {
-                question: "¿Qué hace 'padding: 0' en CSS?",
+                question: "¿Qué hace 'transform: translateX(-50%)' en el corazón del sobre?",
                 options: [
-                    "Elimina todo el espacio interior del elemento",
-                    "Cambia el color de fondo",
-                    "Hace el texto más grande",
-                    "Agrega bordes al elemento"
+                    "Lo mueve 50% hacia la izquierda para centrarlo",
+                    "Lo hace 50% más pequeño",
+                    "Lo rota 50 grados",
+                    "Cambia su transparencia al 50%"
                 ],
                 correct: 0,
-                explanation: "¡Perfecto! 📦 padding: 0 elimina TODO el espacio interior, ¡como quitar el relleno de un cojín!"
+                explanation: "¡Perfecto! 🎯 translateX(-50%) mueve el elemento 50% de su propio ancho hacia la izquierda. Combinado con left: 50%, esto centra el corazón horizontalmente."
             },
             {
-                question: "¿Para qué sirve 'background-color' en CSS?",
+                question: "¿Para qué sirve 'filter: drop-shadow()' en el corazón?",
                 options: [
-                    "Para cambiar el tamaño",
-                    "Para añadir una imagen",
-                    "Para cambiar el color del texto",
-                    "Para cambiar el color de fondo de un elemento"
-                ],
-                correct: 3,
-                explanation: "¡Muy bien! 🎨 background-color cambia el color de fondo, ¡en este código se usa var(--dark-color) que es negro!"
-            },
-            {
-                question: "¿Qué hace 'display: flex' en CSS?",
-                options: [
-                    "Cambia el color del elemento",
-                    "Organiza elementos de forma flexible",
-                    "Hace el elemento más pequeño",
-                    "Elimina el elemento"
+                    "Para cambiar el color del corazón",
+                    "Para agregar una sombra más natural al elemento",
+                    "Para hacer el corazón transparente",
+                    "Para animar el corazón"
                 ],
                 correct: 1,
-                explanation: "¡Excelente! 🎯 display: flex organiza elementos de forma flexible, ¡en este código ayuda a centrar el contenido!"
+                explanation: "¡Muy bien! 🌑 drop-shadow() crea una sombra que sigue la forma del elemento, ¡haciendo que el corazón tenga profundidad y se vea más realista!"
             },
             {
-                question: "¿Qué significa 'min-height: 100vh'?",
+                question: "¿Qué significa 'z-index: 6' en el corazón del sobre?",
                 options: [
-                    "Hace el elemento muy pequeño",
-                    "Cambia el color del elemento",
-                    "Elimina la altura del elemento",
-                    "Altura mínima igual a toda la pantalla"
-                ],
-                correct: 3,
-                explanation: "¡Correcto! 📐 100vh significa el 100% de la altura de la ventana, ¡como llenar toda la pantalla de arriba a abajo!"
-            },
-            {
-                question: "¿Para qué sirve 'overflow: hidden'?",
-                options: [
-                    "Para organizar elementos en filas",
-                    "Para cortar lo que sobresale del elemento",
-                    "Para cambiar el color",
-                    "Para hacer elementos más grandes"
+                    "Hace el elemento 6 veces más grande",
+                    "Define el orden de apilamiento (cuánto está al frente)",
+                    "Lo mueve 6 píxeles hacia arriba",
+                    "Cambia el color del elemento"
                 ],
                 correct: 1,
-                explanation: "¡Súper! ✂️ overflow: hidden corta el contenido que se sale, ¡por eso en este código no aparecen barras de desplazamiento!"
+                explanation: "¡Excelente! 📚 z-index controla qué elementos aparecen delante de otros. Valor más alto = más al frente. El corazón tiene z-index: 6 para estar encima del sobre."
             },
             {
-                question: "¿Qué hace 'position: fixed' en CSS?",
+                question: "En el sello, ¿qué hace 'border: 3px dashed #e91e63'?",
                 options: [
-                    "Elimina el borde completamente",
-                    "Mantiene el elemento fijo en la pantalla",
-                    "Cambia el grosor del borde",
-                    "Cambia el color del borde"
+                    "Crea un borde punteado rosa de 3px",
+                    "Crea un borde discontinuo (guiones) rosa de 3px",
+                    "Hace el elemento rosa y transparente",
+                    "Elimina el borde del elemento"
                 ],
                 correct: 1,
-                explanation: "¡Genial! 📌 position: fixed mantiene el elemento fijo aunque hagas scroll, ¡como el elemento .night en este código!"
+                explanation: "¡Correcto! ✂️ 'dashed' crea un borde con líneas discontinuas (guiones), perfecto para darle al sello ese aspecto de estampilla postal clásica."
             },
             {
-                question: "¿Qué hace 'transform: translateX(-50%)'?",
+                question: "¿Qué hace la animación 'heartPulse' en el corazón?",
                 options: [
-                    "Cambia colores",
-                    "Hace zoom",
-                    "Mueve el elemento 50% a la izquierda",
-                    "Esconde TODO el elemento"
-                ],
-                correct: 2,
-                explanation: "¡Muy bien! ⬅️ translateX(-50%) mueve el elemento hacia la izquierda, ¡en este código ayuda a centrar el elemento .night!"
-            },
-            {
-                question: "¿Para qué sirven las variables CSS como '--dark-color'?",
-                options: [
-                    "Para eliminar elementos",
-                    "Para cambiar tamaños",
-                    "Para hacer animaciones",
-                    "Para guardar valores que se usan varias veces"
-                ],
-                correct: 3,
-                explanation: "¡Fantástico! 💾 Las variables CSS guardan valores para usarlos muchas veces, ¡como tener un color favorito guardado!"
-            },
-            {
-                question: "¿Qué hace 'filter: blur()' en CSS?",
-                options: [
-                    "Hace el texto más grande",
-                    "Desenforma o hace borroso el elemento",
-                    "Cambia el color del elemento",
-                    "Elimina el elemento"
+                    "Lo hace girar continuamente",
+                    "Lo hace crecer y encogerse como un latido",
+                    "Lo mueve de lado a lado",
+                    "Cambia su color gradualmente"
                 ],
                 correct: 1,
-                explanation: "¡Excelente! 🌫️ filter: blur() hace borroso el elemento, ¡en este código se usa blur(0.1vmin) para el fondo nocturno!"
+                explanation: "¡Súper! 💓 La animación heartPulse usa scale(1.15) para hacer que el corazón crezca al 50% de la animación, creando el efecto de latido."
+            },
+            {
+                question: "¿Qué hace 'pointer-events: none' en el corazón?",
+                options: [
+                    "Oculta el elemento completamente",
+                    "Hace que el elemento no responda a clics del ratón",
+                    "Mueve el puntero del ratón",
+                    "Cambia el cursor al pasar sobre el elemento"
+                ],
+                correct: 1,
+                explanation: "¡Genial! 🖱️ pointer-events: none hace que el elemento ignore los clics, permitiendo hacer clic a través de él en elementos debajo."
+            },
+            {
+                question: "En el botón de pista, ¿qué hace 'linear-gradient(135deg, #e91e63 0%, #ec407a 100%)'?",
+                options: [
+                    "Crea un borde degradado",
+                    "Crea un fondo con gradiente de dos colores rosas",
+                    "Hace el texto degradado",
+                    "Anima el color del botón"
+                ],
+                correct: 1,
+                explanation: "¡Muy bien! 🎨 linear-gradient crea un degradado de color. 135deg es el ángulo, y los dos colores (#e91e63 y #ec407a) crean una transición suave."
+            },
+            {
+                question: "¿Qué hace '@keyframes heartPulse' en el código?",
+                options: [
+                    "Define una animación llamada heartPulse",
+                    "Crea un elemento con clase heartPulse",
+                    "Importa una librería de animaciones",
+                    "Elimina todas las animaciones"
+                ],
+                correct: 0,
+                explanation: "¡Excelente! 🎬 @keyframes define animaciones personalizadas. heartPulse define cómo debe animarse el corazón a lo largo del tiempo."
+            },
+            {
+                question: "En la animación de inflado, ¿qué hace 'transform: scale(1.15)'?",
+                options: [
+                    "Rota el elemento 115 grados",
+                    "Aumenta el tamaño del elemento al 115% de su tamaño original",
+                    "Mueve el elemento 115 píxeles",
+                    "Cambia la opacidad al 115%"
+                ],
+                correct: 1,
+                explanation: "¡Fantástico! 📏 scale(1.15) aumenta el tamaño del elemento a 1.15 veces su tamaño original (115%), creando el efecto de inflado del sobre."
             }
         ];
         
@@ -905,9 +905,7 @@
         const scoreMessageElement = document.getElementById('score-message');
         
         btnStart.addEventListener('click', startGame);
-        
         btnNext.addEventListener('click', nextQuestion);
-        
         btnRestart.addEventListener('click', restartGame);
         
         function startGame() {
@@ -933,7 +931,7 @@
                 const optionIcon = document.createElement('div');
                 optionIcon.classList.add('option-icon');
                 
-                const icons = ['fas fa-star', 'fas fa-heart', 'fas fa-sun', 'fas fa-moon'];
+                const icons = ['fas fa-heart', 'fas fa-envelope', 'fas fa-stamp', 'fas fa-sparkles'];
                 optionIcon.innerHTML = `<i class="${icons[index]}"></i>`;
                 
                 optionElement.appendChild(optionIcon);
@@ -954,7 +952,6 @@
             if (selectedOption !== null) return;
             
             selectedOption = index;
-            
             optionElement.classList.add('selected');
             
             const allOptions = document.querySelectorAll('.option');
@@ -1073,14 +1070,14 @@
             finalScoreElement.textContent = `${score}/${questions.length}`;
             
             if (score === questions.length) {
-                scoreMessageElement.textContent = "¡PERFECTO! 🏆 Eres un experto en CSS Básico";
+                scoreMessageElement.textContent = "¡PERFECTO! 🏆 Eres un experto en CSS del Sobre de Amor";
                 createConfetti();
             } else if (score >= questions.length * 0.7) {
                 scoreMessageElement.textContent = "¡MUY BIEN! 🌟 Dominas CSS muy bien";
             } else if (score >= questions.length * 0.5) {
-                scoreMessageElement.textContent = "¡BUEN TRABAJO! 👍 Sigue aprendiendo";
+                scoreMessageElement.textContent = "¡BUEN TRABAJO! 👍 Sigue aprendiendo CSS";
             } else {
-                scoreMessageElement.textContent = "¡SIGUE PRACTICANDO! 💪 Aprenderás mucho más";
+                scoreMessageElement.textContent = "¡SIGUE PRACTICANDO! 💪 El CSS del sobre es genial";
             }
         }
         
