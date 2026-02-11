@@ -774,114 +774,114 @@
         
         const questions = [
             {
-                question: "En el sobre, ¿qué hace 'position: absolute'?",
+                question: "¿Qué hace 'clip-path: polygon(0 0, 100% 0, 50% 100%)' en las solapas del sobre?",
                 options: [
-                    "Centra el elemento automáticamente",
-                    "Permite posicionar el elemento en coordenadas específicas",
-                    "Hace que el elemento sea invisible",
-                    "Cambia el color del elemento"
+                    "Crea un borde redondeado",
+                    "Crea una forma triangular cortando el elemento",
+                    "Hace el elemento transparente",
+                    "Agrega una sombra triangular"
                 ],
                 correct: 1,
-                explanation: "¡Genial! 📌 position: absolute permite posicionar elementos usando top, left, right, bottom. En el sobre se usa para el corazón, el sello y el texto."
+                explanation: "¡Correcto! 🔺 clip-path con polygon() recorta el elemento en forma de triángulo usando coordenadas. Los 3 puntos (esquina superior izquierda, superior derecha y centro inferior) forman la solapa triangular del sobre."
             },
             {
-                question: "¿Qué hace 'transform: translateX(-50%)' en el corazón del sobre?",
+                question: "En el sobre, ¿qué hace 'transform-origin: 50% 0%' en la solapa frontal?",
                 options: [
-                    "Lo mueve 50% hacia la izquierda para centrarlo",
-                    "Lo hace 50% más pequeño",
-                    "Lo rota 50 grados",
-                    "Cambia su transparencia al 50%"
+                    "Define el punto de pivote para las transformaciones",
+                    "Cambia el tamaño del elemento al 50%",
+                    "Mueve el elemento al 50% de la pantalla",
+                    "Rota el elemento 50 grados"
                 ],
                 correct: 0,
-                explanation: "¡Perfecto! 🎯 translateX(-50%) mueve el elemento 50% de su propio ancho hacia la izquierda. Combinado con left: 50%, esto centra el corazón horizontalmente."
+                explanation: "¡Excelente! 🎯 transform-origin define desde dónde se aplican las transformaciones. '50% 0%' significa que la rotación ocurre desde el centro superior, como una bisagra en la parte de arriba de la solapa."
             },
             {
-                question: "¿Para qué sirve 'filter: drop-shadow()' en el corazón?",
+                question: "¿Para qué sirve 'perspective: 1500px' en el contenedor del sobre?",
                 options: [
-                    "Para cambiar el color del corazón",
-                    "Para agregar una sombra más natural al elemento",
-                    "Para hacer el corazón transparente",
-                    "Para animar el corazón"
+                    "Para hacer el contenedor más grande",
+                    "Para crear profundidad 3D en elementos hijos",
+                    "Para cambiar el color del contenedor",
+                    "Para hacer scroll en el contenedor"
                 ],
                 correct: 1,
-                explanation: "¡Muy bien! 🌑 drop-shadow() crea una sombra que sigue la forma del elemento, ¡haciendo que el corazón tenga profundidad y se vea más realista!"
+                explanation: "¡Perfecto! 👁️ perspective define qué tan lejos está el punto de vista 3D. 1500px crea un efecto de profundidad moderado, haciendo que las transformaciones 3D de los elementos hijos se vean realistas."
             },
             {
-                question: "¿Qué significa 'z-index: 6' en el corazón del sobre?",
+                question: "¿Qué hace 'transform-style: preserve-3d' en el sobre?",
                 options: [
-                    "Hace el elemento 6 veces más grande",
-                    "Define el orden de apilamiento (cuánto está al frente)",
-                    "Lo mueve 6 píxeles hacia arriba",
-                    "Cambia el color del elemento"
+                    "Cambia el estilo del elemento",
+                    "Mantiene las transformaciones 3D en elementos hijos",
+                    "Crea un efecto de sombra 3D",
+                    "Hace el elemento tridimensional automáticamente"
                 ],
                 correct: 1,
-                explanation: "¡Excelente! 📚 z-index controla qué elementos aparecen delante de otros. Valor más alto = más al frente. El corazón tiene z-index: 6 para estar encima del sobre."
+                explanation: "¡Genial! 🎲 preserve-3d hace que los elementos hijos mantengan su posición en el espacio 3D en lugar de aplanarse. Es esencial para que las solapas se vean correctamente al rotar."
             },
             {
-                question: "En el sello, ¿qué hace 'border: 3px dashed #e91e63'?",
+                question: "En la animación 'inflar3D', ¿qué hace 'cubic-bezier(0.25, 0.46, 0.45, 0.94)'?",
                 options: [
-                    "Crea un borde punteado rosa de 3px",
-                    "Crea un borde discontinuo (guiones) rosa de 3px",
-                    "Hace el elemento rosa y transparente",
-                    "Elimina el borde del elemento"
+                    "Define el color de la animación",
+                    "Crea una curva de aceleración personalizada",
+                    "Establece la duración de la animación",
+                    "Repite la animación 4 veces"
                 ],
                 correct: 1,
-                explanation: "¡Correcto! ✂️ 'dashed' crea un borde con líneas discontinuas (guiones), perfecto para darle al sello ese aspecto de estampilla postal clásica."
+                explanation: "¡Muy bien! 📈 cubic-bezier() define una curva de tiempo personalizada. Los 4 números controlan cómo acelera y desacelera la animación, creando un movimiento más natural y orgánico que 'ease' o 'linear'."
             },
             {
-                question: "¿Qué hace la animación 'heartPulse' en el corazón?",
+                question: "¿Qué hace 'will-change: transform, opacity' en los corazones?",
                 options: [
-                    "Lo hace girar continuamente",
-                    "Lo hace crecer y encogerse como un latido",
-                    "Lo mueve de lado a lado",
-                    "Cambia su color gradualmente"
+                    "Cambia automáticamente el transform y opacity",
+                    "Avisa al navegador para optimizar esas propiedades",
+                    "Evita que el elemento cambie",
+                    "Duplica el elemento con diferentes opacidades"
                 ],
                 correct: 1,
-                explanation: "¡Súper! 💓 La animación heartPulse usa scale(1.15) para hacer que el corazón crezca al 50% de la animación, creando el efecto de latido."
+                explanation: "¡Correcto! ⚡ will-change es una optimización que dice al navegador: 'estas propiedades van a cambiar pronto, prepárate'. Esto mejora el rendimiento de las animaciones al pre-cargar recursos."
             },
             {
-                question: "¿Qué hace 'pointer-events: none' en el corazón?",
+                question: "En '.envelope.opened', ¿qué hace 'transform: rotateX(180deg)' en la solapa?",
                 options: [
-                    "Oculta el elemento completamente",
-                    "Hace que el elemento no responda a clics del ratón",
-                    "Mueve el puntero del ratón",
-                    "Cambia el cursor al pasar sobre el elemento"
-                ],
-                correct: 1,
-                explanation: "¡Genial! 🖱️ pointer-events: none hace que el elemento ignore los clics, permitiendo hacer clic a través de él en elementos debajo."
-            },
-            {
-                question: "En el botón de pista, ¿qué hace 'linear-gradient(135deg, #e91e63 0%, #ec407a 100%)'?",
-                options: [
-                    "Crea un borde degradado",
-                    "Crea un fondo con gradiente de dos colores rosas",
-                    "Hace el texto degradado",
-                    "Anima el color del botón"
-                ],
-                correct: 1,
-                explanation: "¡Muy bien! 🎨 linear-gradient crea un degradado de color. 135deg es el ángulo, y los dos colores (#e91e63 y #ec407a) crean una transición suave."
-            },
-            {
-                question: "¿Qué hace '@keyframes heartPulse' en el código?",
-                options: [
-                    "Define una animación llamada heartPulse",
-                    "Crea un elemento con clase heartPulse",
-                    "Importa una librería de animaciones",
-                    "Elimina todas las animaciones"
+                    "Rota la solapa 180° en el eje horizontal",
+                    "Mueve la solapa 180 píxeles",
+                    "Cambia el color de la solapa",
+                    "Hace la solapa invisible"
                 ],
                 correct: 0,
-                explanation: "¡Excelente! 🎬 @keyframes define animaciones personalizadas. heartPulse define cómo debe animarse el corazón a lo largo del tiempo."
+                explanation: "¡Exacto! 🔄 rotateX(180deg) rota el elemento 180 grados alrededor del eje X (horizontal). Esto hace que la solapa frontal se voltee hacia atrás, simulando la apertura del sobre."
             },
             {
-                question: "En la animación de inflado, ¿qué hace 'transform: scale(1.15)'?",
+                question: "¿Qué hace 'box-shadow: inset 0 2px 10px rgba(255, 255, 255, 0.3)' en el sobre?",
                 options: [
-                    "Rota el elemento 115 grados",
-                    "Aumenta el tamaño del elemento al 115% de su tamaño original",
-                    "Mueve el elemento 115 píxeles",
-                    "Cambia la opacidad al 115%"
+                    "Agrega una sombra exterior al sobre",
+                    "Crea una sombra dentro del elemento con luz blanca",
+                    "Elimina todas las sombras del elemento",
+                    "Hace el elemento brillante por fuera"
                 ],
                 correct: 1,
-                explanation: "¡Fantástico! 📏 scale(1.15) aumenta el tamaño del elemento a 1.15 veces su tamaño original (115%), creando el efecto de inflado del sobre."
+                explanation: "¡Perfecto! 💡 'inset' hace que la sombra aparezca DENTRO del elemento. El color blanco semi-transparente rgba(255, 255, 255, 0.3) crea un efecto de brillo o reflejo en la superficie del sobre."
+            },
+            {
+                question: "En el botón de pista, ¿qué hace 'animation: hintPulse 2s ease-in-out infinite'?",
+                options: [
+                    "Ejecuta la animación hintPulse cada 2 segundos",
+                    "Repite la animación hintPulse infinitamente cada 2s",
+                    "Detiene la animación después de 2 segundos",
+                    "Crea 2 animaciones simultáneas"
+                ],
+                correct: 1,
+                explanation: "¡Muy bien! 🔁 Esta línea ejecuta la animación 'hintPulse' que dura 2 segundos, con aceleración suave (ease-in-out), y se repite infinitamente (infinite), creando el efecto pulsante continuo."
+            },
+            {
+                question: "¿Qué hace '@media screen and (max-width: 480px)' en el CSS?",
+                options: [
+                    "Crea una pantalla de 480px",
+                    "Aplica estilos solo cuando la pantalla es <= 480px",
+                    "Hace el sitio más lento en móviles",
+                    "Bloquea el acceso en pantallas pequeñas"
+                ],
+                correct: 1,
+                explanation: "¡Excelente! 📱 @media query aplica estilos condicionales. 'max-width: 480px' significa que esos estilos solo se activan cuando la pantalla es de 480px o menos, adaptando el diseño para móviles pequeños."
             }
         ];
         
