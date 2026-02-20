@@ -3,697 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz CSS - Sobre de Amor</title>
+    <title>Quiz CSS - Estrellas Fugaces</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Comic Sans MS', 'Chalkboard SE', cursive;
-        }
-        
-        body {
-            background: linear-gradient(135deg, #6ecbf5 0%, #059ee3 100%);
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
-        
-        .container {
-            width: 100%;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-        
-        /* Pantalla de inicio */
-        .start-screen {
-            background-color: #ff9e6d;
-            border-radius: 30px;
-            padding: 50px 40px;
-            text-align: center;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-            border: 10px solid #ff7b3d;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .start-screen::before {
-            content: "";
-            position: absolute;
-            top: -50px;
-            right: -50px;
-            width: 150px;
-            height: 150px;
-            background-color: #ffda79;
-            border-radius: 50%;
-            z-index: 1;
-        }
-        
-        .start-screen::after {
-            content: "";
-            position: absolute;
-            bottom: -30px;
-            left: -30px;
-            width: 100px;
-            height: 100px;
-            background-color: #a5deff;
-            border-radius: 50%;
-            z-index: 1;
-        }
-        
-        .start-title {
-            font-size: 3.5rem;
-            color: white;
-            margin-bottom: 20px;
-            text-shadow: 4px 4px 0 #ff7b3d;
-            position: relative;
-            z-index: 2;
-        }
-        
-        .start-subtitle {
-            font-size: 1.8rem;
-            color: white;
-            margin-bottom: 40px;
-            text-shadow: 2px 2px 0 #ff7b3d;
-            position: relative;
-            z-index: 2;
-        }
-        
-        .character {
-            width: 150px;
-            height: 150px;
-            margin: 0 auto 40px;
-            background-color: #ffda79;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border: 8px solid white;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-            position: relative;
-            z-index: 2;
-        }
-        
-        .character i {
-            font-size: 70px;
-            color: #ff7b3d;
-        }
-        
-        .btn-start {
-            background-color: #4cd964;
-            color: white;
-            border: none;
-            border-radius: 50px;
-            padding: 25px 60px;
-            font-size: 2rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 0 #2ecc71;
-            position: relative;
-            z-index: 2;
-            letter-spacing: 2px;
-        }
-        
-        .btn-start:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 0 #2ecc71;
-            background-color: #5de673;
-        }
-        
-        .btn-start:active {
-            transform: translateY(0);
-            box-shadow: 0 5px 0 #2ecc71;
-        }
-        
-        /* Juego */
-        .game-screen {
-            display: none;
-            background-color: white;
-            border-radius: 30px;
-            padding: 40px;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-            border: 10px solid #a5deff;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .game-screen::before {
-            content: "";
-            position: absolute;
-            top: -20px;
-            right: -20px;
-            width: 80px;
-            height: 80px;
-            background-color: #ffda79;
-            border-radius: 50%;
-        }
-        
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 40px;
-            background-color: #a5deff;
-            padding: 20px;
-            border-radius: 20px;
-            border: 5px solid #6ecbf5;
-        }
-        
-        .score-container {
-            background-color: white;
-            padding: 15px 25px;
-            border-radius: 15px;
-            border: 5px solid #4cd964;
-            text-align: center;
-            min-width: 150px;
-        }
-        
-        .score-label {
-            font-size: 1.2rem;
-            color: #666;
-            margin-bottom: 5px;
-        }
-        
-        .score-value {
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: #ff7b3d;
-        }
-        
-        .question-counter {
-            background-color: white;
-            padding: 15px 25px;
-            border-radius: 15px;
-            border: 5px solid #ffda79;
-            text-align: center;
-            min-width: 150px;
-        }
-        
-        .counter-label {
-            font-size: 1.2rem;
-            color: #666;
-            margin-bottom: 5px;
-        }
-        
-        .counter-value {
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: #6ecbf5;
-        }
-        
-        .question-card {
-            background-color: #ffda79;
-            border-radius: 25px;
-            padding: 40px;
-            margin-bottom: 40px;
-            border: 8px solid #ffb347;
-            position: relative;
-            box-shadow: 0 10px 20px rgba(255, 179, 71, 0.3);
-        }
-        
-        .question-number {
-            position: absolute;
-            top: -20px;
-            left: 30px;
-            background-color: #ff7b3d;
-            color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 2rem;
-            font-weight: bold;
-            border: 5px solid white;
-            box-shadow: 0 5px 15px rgba(255, 123, 61, 0.4);
-        }
-        
-        .question-text {
-            font-size: 2.2rem;
-            color: #333;
-            line-height: 1.4;
-            text-align: center;
-            padding-top: 10px;
-        }
-        
-        .options-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 25px;
-            margin-bottom: 40px;
-        }
-        
-        /* Tarjetas de opciones mejoradas */
-        .option {
-            background: linear-gradient(145deg, #ffffff, #f0f0f0);
-            border-radius: 25px;
-            padding: 30px 20px;
-            font-size: 1.8rem;
-            color: #333;
-            cursor: pointer;
-            transition: all 0.4s ease;
-            text-align: center;
-            min-height: 140px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-            border: 5px solid transparent;
-        }
-        
-        .option::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 10px;
-            background: linear-gradient(90deg, #ff7b3d, #ffda79);
-            transform: translateY(-100%);
-            transition: transform 0.3s ease;
-        }
-        
-        .option:hover {
-            transform: translateY(-10px) scale(1.03);
-            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
-            border-color: #6ecbf5;
-        }
-        
-        .option:hover::before {
-            transform: translateY(0);
-        }
-        
-        .option-icon {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            font-size: 1.5rem;
-            color: #6ecbf5;
-            opacity: 0.5;
-        }
-        
-        /* Estilos para opciones seleccionadas, correctas e incorrectas */
-        .option.selected {
-            border-color: #ff7b3d;
-            background: linear-gradient(145deg, #fff5e6, #ffeacc);
-            animation: pulse 0.5s ease;
-        }
-        
-        .option.correct {
-            border-color: #4cd964;
-            background: linear-gradient(145deg, #e6ffe6, #ccffcc);
-            animation: correctAnimation 1s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .option.correct::after {
-            content: "✓";
-            position: absolute;
-            top: -15px;
-            right: -15px;
-            width: 50px;
-            height: 50px;
-            background-color: #4cd964;
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            font-weight: bold;
-            animation: popIn 0.5s ease 0.3s both;
-        }
-        
-        .option.incorrect {
-            border-color: #ff6b6b;
-            background: linear-gradient(145deg, #ffe6e6, #ffcccc);
-            animation: shake 0.5s ease;
-        }
-        
-        .option.incorrect::after {
-            content: "✗";
-            position: absolute;
-            top: -15px;
-            right: -15px;
-            width: 50px;
-            height: 50px;
-            background-color: #ff6b6b;
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            font-weight: bold;
-            animation: popIn 0.5s ease 0.3s both;
-        }
-        
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-        
-        @keyframes correctAnimation {
-            0% { transform: scale(1); }
-            25% { transform: scale(1.1); }
-            50% { transform: scale(1); }
-            75% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-        
-        @keyframes popIn {
-            0% { transform: scale(0); opacity: 0; }
-            70% { transform: scale(1.2); }
-            100% { transform: scale(1); opacity: 1; }
-        }
-        
-        @keyframes shake {
-            0%, 100% { transform: translateX(0); }
-            10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
-            20%, 40%, 60%, 80% { transform: translateX(5px); }
-        }
-        
-        /* Animación de carga */
-        .loading-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.7);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s ease, visibility 0.3s ease;
-        }
-        
-        .loading-overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
-        
-        .loading-content {
-            background-color: white;
-            border-radius: 25px;
-            padding: 40px;
-            text-align: center;
-            max-width: 400px;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-            animation: slideUp 0.5s ease;
-        }
-        
-        .loading-spinner {
-            width: 80px;
-            height: 80px;
-            border: 8px solid #f3f3f3;
-            border-top: 8px solid #4cd964;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            margin: 0 auto 30px;
-        }
-        
-        .loading-text {
-            font-size: 2rem;
-            color: #333;
-            font-weight: bold;
-        }
-        
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        
-        @keyframes slideUp {
-            0% { transform: translateY(50px); opacity: 0; }
-            100% { transform: translateY(0); opacity: 1; }
-        }
-        
-        /* Feedback container */
-        .feedback-container {
-            background: linear-gradient(145deg, #e8f6ff, #d6eeff);
-            border-radius: 25px;
-            padding: 30px;
-            margin-bottom: 40px;
-            border: 8px solid #6ecbf5;
-            display: none;
-            box-shadow: 0 10px 20px rgba(108, 203, 245, 0.3);
-            animation: slideIn 0.5s ease;
-        }
-        
-        @keyframes slideIn {
-            0% { transform: translateY(20px); opacity: 0; }
-            100% { transform: translateY(0); opacity: 1; }
-        }
-        
-        .feedback-title {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-        
-        .feedback-icon {
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-right: 20px;
-            flex-shrink: 0;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        .feedback-icon.correct {
-            background: linear-gradient(145deg, #4cd964, #3ac853);
-        }
-        
-        .feedback-icon.incorrect {
-            background: linear-gradient(145deg, #ff6b6b, #e55a5a);
-        }
-        
-        .feedback-icon i {
-            font-size: 2.5rem;
-            color: white;
-        }
-        
-        .feedback-text {
-            font-size: 1.8rem;
-            color: #333;
-            line-height: 1.5;
-        }
-        
-        .controls {
-            display: flex;
-            justify-content: center;
-        }
-        
-        .btn-next {
-            background: linear-gradient(145deg, #ff7b3d, #ff8f57);
-            color: white;
-            border: none;
-            border-radius: 50px;
-            padding: 25px 60px;
-            font-size: 2rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 0 #e55a1e;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .btn-next::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: left 0.5s ease;
-        }
-        
-        .btn-next:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 0 #e55a1e;
-        }
-        
-        .btn-next:hover::before {
-            left: 100%;
-        }
-        
-        .btn-next:active {
-            transform: translateY(0);
-            box-shadow: 0 5px 0 #e55a1e;
-        }
-        
-        .btn-next i {
-            margin-left: 15px;
-        }
-        
-        /* Pantalla final */
-        .end-screen {
-            display: none;
-            background: linear-gradient(145deg, #ffda79, #ffb347);
-            border-radius: 30px;
-            padding: 50px 40px;
-            text-align: center;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-            border: 10px solid #ffb347;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .end-screen::before {
-            content: "";
-            position: absolute;
-            top: -30px;
-            right: -30px;
-            width: 120px;
-            height: 120px;
-            background-color: #a5deff;
-            border-radius: 50%;
-        }
-        
-        .end-title {
-            font-size: 3.5rem;
-            color: #ff7b3d;
-            margin-bottom: 30px;
-            text-shadow: 4px 4px 0 white;
-            position: relative;
-            z-index: 2;
-        }
-        
-        .final-score {
-            font-size: 5rem;
-            color: #6ecbf5;
-            margin-bottom: 30px;
-            text-shadow: 4px 4px 0 white;
-            position: relative;
-            z-index: 2;
-        }
-        
-        .score-message {
-            font-size: 2.2rem;
-            color: #333;
-            margin-bottom: 50px;
-            position: relative;
-            z-index: 2;
-        }
-        
-        .btn-restart {
-            background: linear-gradient(145deg, #4cd964, #5de673);
-            color: white;
-            border: none;
-            border-radius: 50px;
-            padding: 25px 60px;
-            font-size: 2rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 0 #2ecc71;
-            position: relative;
-            z-index: 2;
-        }
-        
-        .btn-restart:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 0 #2ecc71;
-        }
-        
-        /* Estilos para confeti */
-        .confetti {
-            position: fixed;
-            width: 10px;
-            height: 10px;
-            z-index: 9999;
-            pointer-events: none;
-        }
-        
-        @keyframes confetti-fall {
-            to {
-                transform: translateY(100vh) rotate(360deg);
-                opacity: 0;
-            }
-        }
-        
-        /* Responsive */
-        @media (max-width: 768px) {
-            .options-container {
-                grid-template-columns: 1fr;
-            }
-            
-            .question-text {
-                font-size: 1.8rem;
-            }
-            
-            .option {
-                font-size: 1.6rem;
-                min-height: 120px;
-            }
-            
-            .start-title, .end-title {
-                font-size: 2.8rem;
-            }
-            
-            .header {
-                flex-direction: column;
-                gap: 20px;
-            }
-            
-            .score-container, .question-counter {
-                width: 100%;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .start-title, .end-title {
-                font-size: 2.2rem;
-            }
-            
-            .question-text {
-                font-size: 1.6rem;
-            }
-            
-            .option {
-                font-size: 1.4rem;
-                padding: 20px 10px;
-                min-height: 100px;
-            }
-            
-            .btn-start, .btn-next, .btn-restart {
-                font-size: 1.6rem;
-                padding: 20px 40px;
-            }
-            
-            .feedback-text {
-                font-size: 1.5rem;
-            }
-            
-            .loading-content {
-                padding: 30px 20px;
-                margin: 20px;
-            }
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Comic Sans MS', 'Chalkboard SE', cursive; }
+        body { background: linear-gradient(135deg, #6ecbf5 0%, #059ee3 100%); min-height: 100vh; display: flex; justify-content: center; align-items: center; padding: 20px; }
+        .container { width: 100%; max-width: 900px; margin: 0 auto; }
+        .start-screen { background-color: #ff9e6d; border-radius: 30px; padding: 50px 40px; text-align: center; box-shadow: 0 15px 30px rgba(0,0,0,0.2); border: 10px solid #ff7b3d; position: relative; overflow: hidden; }
+        .start-screen::before { content: ""; position: absolute; top: -50px; right: -50px; width: 150px; height: 150px; background-color: #ffda79; border-radius: 50%; z-index: 1; }
+        .start-screen::after { content: ""; position: absolute; bottom: -30px; left: -30px; width: 100px; height: 100px; background-color: #a5deff; border-radius: 50%; z-index: 1; }
+        .start-title { font-size: 3.5rem; color: white; margin-bottom: 20px; text-shadow: 4px 4px 0 #ff7b3d; position: relative; z-index: 2; }
+        .start-subtitle { font-size: 1.8rem; color: white; margin-bottom: 40px; text-shadow: 2px 2px 0 #ff7b3d; position: relative; z-index: 2; }
+        .character { width: 150px; height: 150px; margin: 0 auto 40px; background-color: #ffda79; border-radius: 50%; display: flex; justify-content: center; align-items: center; border: 8px solid white; box-shadow: 0 10px 20px rgba(0,0,0,0.2); position: relative; z-index: 2; }
+        .character i { font-size: 70px; color: #ff7b3d; }
+        .btn-start { background-color: #4cd964; color: white; border: none; border-radius: 50px; padding: 25px 60px; font-size: 2rem; font-weight: bold; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 10px 0 #2ecc71; position: relative; z-index: 2; letter-spacing: 2px; }
+        .btn-start:hover { transform: translateY(-5px); box-shadow: 0 15px 0 #2ecc71; background-color: #5de673; }
+        .btn-start:active { transform: translateY(0); box-shadow: 0 5px 0 #2ecc71; }
+        .game-screen { display: none; background-color: white; border-radius: 30px; padding: 40px; box-shadow: 0 15px 30px rgba(0,0,0,0.2); border: 10px solid #a5deff; position: relative; overflow: hidden; }
+        .game-screen::before { content: ""; position: absolute; top: -20px; right: -20px; width: 80px; height: 80px; background-color: #ffda79; border-radius: 50%; }
+        .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; background-color: #a5deff; padding: 20px; border-radius: 20px; border: 5px solid #6ecbf5; }
+        .score-container { background-color: white; padding: 15px 25px; border-radius: 15px; border: 5px solid #4cd964; text-align: center; min-width: 150px; }
+        .score-label { font-size: 1.2rem; color: #666; margin-bottom: 5px; }
+        .score-value { font-size: 2.5rem; font-weight: bold; color: #ff7b3d; }
+        .question-counter { background-color: white; padding: 15px 25px; border-radius: 15px; border: 5px solid #ffda79; text-align: center; min-width: 150px; }
+        .counter-label { font-size: 1.2rem; color: #666; margin-bottom: 5px; }
+        .counter-value { font-size: 2.5rem; font-weight: bold; color: #6ecbf5; }
+        .question-card { background-color: #ffda79; border-radius: 25px; padding: 40px; margin-bottom: 40px; border: 8px solid #ffb347; position: relative; box-shadow: 0 10px 20px rgba(255,179,71,0.3); }
+        .question-number { position: absolute; top: -20px; left: 30px; background-color: #ff7b3d; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 2rem; font-weight: bold; border: 5px solid white; box-shadow: 0 5px 15px rgba(255,123,61,0.4); }
+        .question-text { font-size: 2.2rem; color: #333; line-height: 1.4; text-align: center; padding-top: 10px; }
+        .options-container { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin-bottom: 40px; }
+        .option { background: linear-gradient(145deg, #ffffff, #f0f0f0); border-radius: 25px; padding: 30px 20px; font-size: 1.8rem; color: #333; cursor: pointer; transition: all 0.4s ease; text-align: center; min-height: 140px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; box-shadow: 0 8px 15px rgba(0,0,0,0.1); border: 5px solid transparent; }
+        .option::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 10px; background: linear-gradient(90deg, #ff7b3d, #ffda79); transform: translateY(-100%); transition: transform 0.3s ease; }
+        .option:hover { transform: translateY(-10px) scale(1.03); box-shadow: 0 15px 25px rgba(0,0,0,0.15); border-color: #6ecbf5; }
+        .option:hover::before { transform: translateY(0); }
+        .option-icon { position: absolute; top: 15px; right: 15px; font-size: 1.5rem; color: #6ecbf5; opacity: 0.5; }
+        .option.selected { border-color: #ff7b3d; background: linear-gradient(145deg, #fff5e6, #ffeacc); animation: pulse 0.5s ease; }
+        .option.correct { border-color: #4cd964; background: linear-gradient(145deg, #e6ffe6, #ccffcc); animation: correctAnimation 1s ease; }
+        .option.correct::after { content: "✓"; position: absolute; top: -15px; right: -15px; width: 50px; height: 50px; background-color: #4cd964; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; font-weight: bold; animation: popIn 0.5s ease 0.3s both; }
+        .option.incorrect { border-color: #ff6b6b; background: linear-gradient(145deg, #ffe6e6, #ffcccc); animation: shake 0.5s ease; }
+        .option.incorrect::after { content: "✗"; position: absolute; top: -15px; right: -15px; width: 50px; height: 50px; background-color: #ff6b6b; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; font-weight: bold; animation: popIn 0.5s ease 0.3s both; }
+        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
+        @keyframes correctAnimation { 0% { transform: scale(1); } 25% { transform: scale(1.1); } 50% { transform: scale(1); } 75% { transform: scale(1.05); } 100% { transform: scale(1); } }
+        @keyframes popIn { 0% { transform: scale(0); opacity: 0; } 70% { transform: scale(1.2); } 100% { transform: scale(1); opacity: 1; } }
+        @keyframes shake { 0%, 100% { transform: translateX(0); } 10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); } 20%, 40%, 60%, 80% { transform: translateX(5px); } }
+        .loading-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); display: flex; justify-content: center; align-items: center; z-index: 1000; opacity: 0; visibility: hidden; transition: opacity 0.3s ease, visibility 0.3s ease; }
+        .loading-overlay.active { opacity: 1; visibility: visible; }
+        .loading-content { background-color: white; border-radius: 25px; padding: 40px; text-align: center; max-width: 400px; box-shadow: 0 15px 30px rgba(0,0,0,0.3); animation: slideUp 0.5s ease; }
+        .loading-spinner { width: 80px; height: 80px; border: 8px solid #f3f3f3; border-top: 8px solid #4cd964; border-radius: 50%; animation: spin 1s linear infinite; margin: 0 auto 30px; }
+        .loading-text { font-size: 2rem; color: #333; font-weight: bold; }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        @keyframes slideUp { 0% { transform: translateY(50px); opacity: 0; } 100% { transform: translateY(0); opacity: 1; } }
+        .feedback-container { background: linear-gradient(145deg, #e8f6ff, #d6eeff); border-radius: 25px; padding: 30px; margin-bottom: 40px; border: 8px solid #6ecbf5; display: none; box-shadow: 0 10px 20px rgba(108,203,245,0.3); animation: slideIn 0.5s ease; }
+        @keyframes slideIn { 0% { transform: translateY(20px); opacity: 0; } 100% { transform: translateY(0); opacity: 1; } }
+        .feedback-title { display: flex; align-items: center; margin-bottom: 20px; }
+        .feedback-icon { width: 70px; height: 70px; border-radius: 50%; display: flex; justify-content: center; align-items: center; margin-right: 20px; flex-shrink: 0; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .feedback-icon.correct { background: linear-gradient(145deg, #4cd964, #3ac853); }
+        .feedback-icon.incorrect { background: linear-gradient(145deg, #ff6b6b, #e55a5a); }
+        .feedback-icon i { font-size: 2.5rem; color: white; }
+        .feedback-text { font-size: 1.8rem; color: #333; line-height: 1.5; }
+        .controls { display: flex; justify-content: center; }
+        .btn-next { background: linear-gradient(145deg, #ff7b3d, #ff8f57); color: white; border: none; border-radius: 50px; padding: 25px 60px; font-size: 2rem; font-weight: bold; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 10px 0 #e55a1e; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+        .btn-next::before { content: ""; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent); transition: left 0.5s ease; }
+        .btn-next:hover { transform: translateY(-5px); box-shadow: 0 15px 0 #e55a1e; }
+        .btn-next:hover::before { left: 100%; }
+        .btn-next:active { transform: translateY(0); box-shadow: 0 5px 0 #e55a1e; }
+        .btn-next i { margin-left: 15px; }
+        .end-screen { display: none; background: linear-gradient(145deg, #ffda79, #ffb347); border-radius: 30px; padding: 50px 40px; text-align: center; box-shadow: 0 15px 30px rgba(0,0,0,0.2); border: 10px solid #ffb347; position: relative; overflow: hidden; }
+        .end-screen::before { content: ""; position: absolute; top: -30px; right: -30px; width: 120px; height: 120px; background-color: #a5deff; border-radius: 50%; }
+        .end-title { font-size: 3.5rem; color: #ff7b3d; margin-bottom: 30px; text-shadow: 4px 4px 0 white; position: relative; z-index: 2; }
+        .final-score { font-size: 5rem; color: #6ecbf5; margin-bottom: 30px; text-shadow: 4px 4px 0 white; position: relative; z-index: 2; }
+        .score-message { font-size: 2.2rem; color: #333; margin-bottom: 50px; position: relative; z-index: 2; }
+        .btn-restart { background: linear-gradient(145deg, #4cd964, #5de673); color: white; border: none; border-radius: 50px; padding: 25px 60px; font-size: 2rem; font-weight: bold; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 10px 0 #2ecc71; position: relative; z-index: 2; }
+        .btn-restart:hover { transform: translateY(-5px); box-shadow: 0 15px 0 #2ecc71; }
+        .confetti { position: fixed; width: 10px; height: 10px; z-index: 9999; pointer-events: none; }
+        @keyframes confetti-fall { to { transform: translateY(100vh) rotate(360deg); opacity: 0; } }
+        @media (max-width: 768px) { .options-container { grid-template-columns: 1fr; } .question-text { font-size: 1.8rem; } .option { font-size: 1.6rem; min-height: 120px; } .start-title, .end-title { font-size: 2.8rem; } .header { flex-direction: column; gap: 20px; } .score-container, .question-counter { width: 100%; } }
+        @media (max-width: 480px) { .start-title, .end-title { font-size: 2.2rem; } .question-text { font-size: 1.6rem; } .option { font-size: 1.4rem; padding: 20px 10px; min-height: 100px; } .btn-start, .btn-next, .btn-restart { font-size: 1.6rem; padding: 20px 40px; } .feedback-text { font-size: 1.5rem; } .loading-content { padding: 30px 20px; margin: 20px; } }
     </style>
 </head>
 <body>
-    <!-- Overlay de carga -->
     <div class="loading-overlay" id="loading-overlay">
         <div class="loading-content">
             <div class="loading-spinner"></div>
@@ -702,68 +90,45 @@
     </div>
     
     <div class="container">
-        <!-- Pantalla de inicio -->
         <div class="start-screen" id="start-screen">
-            <h1 class="start-title">💌 Quiz del Sobre de Amor 💌</h1>
-            <p class="start-subtitle">¡Aprende CSS con el Código del Sobre!</p>
-            
-            <div class="character">
-                <i class="fas fa-heart"></i>
-            </div>
-            
-            <button class="btn-start" id="btn-start">
-                <i class="fas fa-play-circle"></i> ¡EMPEZAR!
-            </button>
+            <h1 class="start-title">🌟 Quiz CSS - Estrellas Fugaces 🌟</h1>
+            <p class="start-subtitle">¡Pon a prueba tus conocimientos de CSS!</p>
+            <div class="character"><i class="fas fa-star"></i></div>
+            <button class="btn-start" id="btn-start"><i class="fas fa-play-circle"></i> ¡EMPEZAR!</button>
         </div>
         
-        <!-- Pantalla del juego -->
         <div class="game-screen" id="game-screen">
             <div class="header">
                 <div class="score-container">
                     <div class="score-label">PUNTUACIÓN</div>
                     <div class="score-value" id="score">0</div>
                 </div>
-                
                 <div class="question-counter">
                     <div class="counter-label">PREGUNTA</div>
                     <div class="counter-value" id="question-counter">1/10</div>
                 </div>
             </div>
-            
             <div class="question-card">
                 <div class="question-number" id="question-number">1</div>
                 <div class="question-text" id="question-text">Cargando pregunta...</div>
             </div>
-            
-            <div class="options-container" id="options-container">
-                <!-- Las opciones se generarán con JavaScript -->
-            </div>
-            
+            <div class="options-container" id="options-container"></div>
             <div class="feedback-container" id="feedback-container">
                 <div class="feedback-title">
-                    <div class="feedback-icon" id="feedback-icon">
-                        <i class="fas fa-check-circle"></i>
-                    </div>
+                    <div class="feedback-icon" id="feedback-icon"><i class="fas fa-check-circle"></i></div>
                     <div class="feedback-text" id="feedback-text"></div>
                 </div>
             </div>
-            
             <div class="controls">
-                <button class="btn-next" id="btn-next">
-                    Siguiente <i class="fas fa-arrow-right"></i>
-                </button>
+                <button class="btn-next" id="btn-next">Siguiente <i class="fas fa-arrow-right"></i></button>
             </div>
         </div>
         
-        <!-- Pantalla final -->
         <div class="end-screen" id="end-screen">
             <h1 class="end-title">¡Juego Terminado!</h1>
             <div class="final-score" id="final-score">0/10</div>
             <p class="score-message" id="score-message">¡Excelente trabajo!</p>
-            
-            <button class="btn-restart" id="btn-restart">
-                <i class="fas fa-redo"></i> Jugar de nuevo
-            </button>
+            <button class="btn-restart" id="btn-restart"><i class="fas fa-redo"></i> Jugar de nuevo</button>
         </div>
     </div>
 
@@ -774,114 +139,114 @@
         
         const questions = [
             {
-                question: "¿Qué hace 'clip-path: polygon(0 0, 100% 0, 50% 100%)' en las solapas del sobre?",
+                question: "¿Para qué sirve 'position: fixed' en CSS?",
                 options: [
-                    "Crea un borde redondeado",
-                    "Crea una forma triangular cortando el elemento",
-                    "Hace el elemento transparente",
-                    "Agrega una sombra triangular"
+                    "Fija el elemento respecto a su elemento padre",
+                    "Fija el elemento en pantalla y no se mueve aunque hagas scroll",
+                    "Hace que el elemento no se pueda mover con JavaScript",
+                    "Coloca el elemento siempre en la esquina superior izquierda"
                 ],
                 correct: 1,
-                explanation: "¡Correcto! 🔺 clip-path con polygon() recorta el elemento en forma de triángulo usando coordenadas. Los 3 puntos (esquina superior izquierda, superior derecha y centro inferior) forman la solapa triangular del sobre."
+                explanation: "¡Correcto! 📌 position: fixed ancla el elemento a la ventana del navegador (viewport). Sin importar cuánto hagas scroll, el elemento siempre queda en el mismo lugar de la pantalla. ¡Por eso se usa en las estrellas: siempre cubren toda la pantalla!"
             },
             {
-                question: "En el sobre, ¿qué hace 'transform-origin: 50% 0%' en la solapa frontal?",
+                question: "¿Qué significa 'width: 100%' y 'height: 100%' en un elemento?",
                 options: [
-                    "Define el punto de pivote para las transformaciones",
-                    "Cambia el tamaño del elemento al 50%",
-                    "Mueve el elemento al 50% de la pantalla",
-                    "Rota el elemento 50 grados"
-                ],
-                correct: 0,
-                explanation: "¡Excelente! 🎯 transform-origin define desde dónde se aplican las transformaciones. '50% 0%' significa que la rotación ocurre desde el centro superior, como una bisagra en la parte de arriba de la solapa."
-            },
-            {
-                question: "¿Para qué sirve 'perspective: 1500px' en el contenedor del sobre?",
-                options: [
-                    "Para hacer el contenedor más grande",
-                    "Para crear profundidad 3D en elementos hijos",
-                    "Para cambiar el color del contenedor",
-                    "Para hacer scroll en el contenedor"
+                    "El elemento mide exactamente 100 píxeles de ancho y alto",
+                    "El elemento ocupa el 100% del ancho y alto de su contenedor padre",
+                    "El elemento siempre ocupa toda la pantalla sin importar nada",
+                    "El elemento se agranda automáticamente con el contenido"
                 ],
                 correct: 1,
-                explanation: "¡Perfecto! 👁️ perspective define qué tan lejos está el punto de vista 3D. 1500px crea un efecto de profundidad moderado, haciendo que las transformaciones 3D de los elementos hijos se vean realistas."
+                explanation: "¡Exacto! 📐 Los porcentajes (%) se calculan en relación al elemento padre. Con width: 100% y height: 100%, el elemento ocupa todo el espacio disponible dentro de su contenedor. En las estrellas, el padre es el viewport, ¡así cubren toda la pantalla!"
             },
             {
-                question: "¿Qué hace 'transform-style: preserve-3d' en el sobre?",
+                question: "¿Para qué sirve 'opacity: 0' en CSS?",
                 options: [
-                    "Cambia el estilo del elemento",
-                    "Mantiene las transformaciones 3D en elementos hijos",
-                    "Crea un efecto de sombra 3D",
-                    "Hace el elemento tridimensional automáticamente"
+                    "Elimina el elemento del HTML completamente",
+                    "Hace el elemento invisible pero sigue ocupando su espacio",
+                    "Borra el color de fondo del elemento",
+                    "Hace que el elemento tenga transparencia solo en los bordes"
                 ],
                 correct: 1,
-                explanation: "¡Genial! 🎲 preserve-3d hace que los elementos hijos mantengan su posición en el espacio 3D en lugar de aplanarse. Es esencial para que las solapas se vean correctamente al rotar."
+                explanation: "¡Muy bien! 👻 opacity: 0 hace el elemento completamente invisible, pero el elemento SIGUE existiendo y ocupando su espacio en la página. Es diferente a display: none. Las estrellas empiezan con opacity: 0 para aparecer suavemente con la animación."
             },
             {
-                question: "En la animación 'inflar3D', ¿qué hace 'cubic-bezier(0.25, 0.46, 0.45, 0.94)'?",
+                question: "¿Qué hace 'position: absolute' en CSS?",
                 options: [
-                    "Define el color de la animación",
-                    "Crea una curva de aceleración personalizada",
-                    "Establece la duración de la animación",
-                    "Repite la animación 4 veces"
+                    "Fija el elemento en pantalla igual que position: fixed",
+                    "Saca el elemento del flujo normal y lo posiciona relativo a su padre",
+                    "Coloca el elemento siempre en el centro de la página",
+                    "Hace que el elemento se superponga automáticamente sobre todo"
                 ],
                 correct: 1,
-                explanation: "¡Muy bien! 📈 cubic-bezier() define una curva de tiempo personalizada. Los 4 números controlan cómo acelera y desacelera la animación, creando un movimiento más natural y orgánico que 'ease' o 'linear'."
+                explanation: "¡Genial! 📍 position: absolute saca el elemento del flujo normal del documento y lo posiciona en relación al elemento padre más cercano que tenga position distinto de static. Se usa en la cola de la estrella (::before) para colocarla exactamente donde se necesita."
             },
             {
-                question: "¿Qué hace 'will-change: transform, opacity' en los corazones?",
+                question: "¿Qué es 'animation-delay' en CSS?",
                 options: [
-                    "Cambia automáticamente el transform y opacity",
-                    "Avisa al navegador para optimizar esas propiedades",
-                    "Evita que el elemento cambie",
-                    "Duplica el elemento con diferentes opacidades"
+                    "La duración total de la animación en segundos",
+                    "El tiempo que espera el elemento antes de empezar la animación",
+                    "El número de veces que se repite la animación",
+                    "La velocidad máxima que alcanza la animación"
                 ],
                 correct: 1,
-                explanation: "¡Correcto! ⚡ will-change es una optimización que dice al navegador: 'estas propiedades van a cambiar pronto, prepárate'. Esto mejora el rendimiento de las animaciones al pre-cargar recursos."
+                explanation: "¡Perfecto! ⏱️ animation-delay define cuánto tiempo espera el elemento antes de iniciar su animación. En las estrellas fugaces cada una tiene un delay diferente (0s, 2s, 4s, 6s...) para que no salgan todas juntas y parezca más natural y aleatorio."
             },
             {
-                question: "En '.envelope.opened', ¿qué hace 'transform: rotateX(180deg)' en la solapa?",
+                question: "¿Qué hace 'border-radius: 50%' en un elemento cuadrado?",
                 options: [
-                    "Rota la solapa 180° en el eje horizontal",
-                    "Mueve la solapa 180 píxeles",
-                    "Cambia el color de la solapa",
-                    "Hace la solapa invisible"
-                ],
-                correct: 0,
-                explanation: "¡Exacto! 🔄 rotateX(180deg) rota el elemento 180 grados alrededor del eje X (horizontal). Esto hace que la solapa frontal se voltee hacia atrás, simulando la apertura del sobre."
-            },
-            {
-                question: "¿Qué hace 'box-shadow: inset 0 2px 10px rgba(255, 255, 255, 0.3)' en el sobre?",
-                options: [
-                    "Agrega una sombra exterior al sobre",
-                    "Crea una sombra dentro del elemento con luz blanca",
-                    "Elimina todas las sombras del elemento",
-                    "Hace el elemento brillante por fuera"
+                    "Redondea solo las dos esquinas superiores del elemento",
+                    "Convierte el elemento en un círculo perfecto",
+                    "Agrega un borde redondeado de 50 píxeles al elemento",
+                    "Rota el elemento 50 grados sobre su centro"
                 ],
                 correct: 1,
-                explanation: "¡Perfecto! 💡 'inset' hace que la sombra aparezca DENTRO del elemento. El color blanco semi-transparente rgba(255, 255, 255, 0.3) crea un efecto de brillo o reflejo en la superficie del sobre."
+                explanation: "¡Excelente! ⭕ border-radius: 50% redondea las esquinas al 50% del tamaño del elemento. Si el elemento es cuadrado (mismo ancho y alto), el resultado es un círculo perfecto. ¡Así se crea el puntito redondo de la estrella fugaz!"
             },
             {
-                question: "En el botón de pista, ¿qué hace 'animation: hintPulse 2s ease-in-out infinite'?",
+                question: "¿Para qué sirve 'z-index' en CSS?",
                 options: [
-                    "Ejecuta la animación hintPulse cada 2 segundos",
-                    "Repite la animación hintPulse infinitamente cada 2s",
-                    "Detiene la animación después de 2 segundos",
-                    "Crea 2 animaciones simultáneas"
+                    "Para mover el elemento hacia la izquierda o la derecha",
+                    "Para controlar qué elemento aparece encima de otro",
+                    "Para hacer zoom en un elemento específico",
+                    "Para definir qué tan grande se ve el elemento en pantalla"
                 ],
                 correct: 1,
-                explanation: "¡Muy bien! 🔁 Esta línea ejecuta la animación 'hintPulse' que dura 2 segundos, con aceleración suave (ease-in-out), y se repite infinitamente (infinite), creando el efecto pulsante continuo."
+                explanation: "¡Correcto! 🎴 z-index controla el orden de apilamiento entre elementos en el eje Z (profundidad). Un elemento con z-index mayor aparece encima de uno con z-index menor. Las estrellas tienen z-index: 1 para aparecer sobre el fondo pero debajo del contenido principal."
             },
             {
-                question: "¿Qué hace '@media screen and (max-width: 480px)' en el CSS?",
+                question: "En la animación, ¿qué significa 'infinite'?",
                 options: [
-                    "Crea una pantalla de 480px",
-                    "Aplica estilos solo cuando la pantalla es <= 480px",
-                    "Hace el sitio más lento en móviles",
-                    "Bloquea el acceso en pantallas pequeñas"
+                    "La animación dura un tiempo infinito (muy lento)",
+                    "La animación se repite sin parar para siempre",
+                    "La animación tiene velocidad infinita (instantánea)",
+                    "La animación espera infinitamente antes de empezar"
                 ],
                 correct: 1,
-                explanation: "¡Excelente! 📱 @media query aplica estilos condicionales. 'max-width: 480px' significa que esos estilos solo se activan cuando la pantalla es de 480px o menos, adaptando el diseño para móviles pequeños."
+                explanation: "¡Muy bien! 🔁 La palabra 'infinite' en una animación CSS hace que se repita sin parar, de forma continua. Si no se pone, la animación se ejecuta solo una vez y termina. Las estrellas fugaces usan 'infinite' para que sigan apareciendo constantemente."
+            },
+            {
+                question: "¿Qué hace 'transform: translateX()' en CSS?",
+                options: [
+                    "Rota el elemento en el eje horizontal",
+                    "Mueve el elemento hacia la izquierda o la derecha",
+                    "Escala el elemento en el eje horizontal",
+                    "Cambia el color del elemento de izquierda a derecha"
+                ],
+                correct: 1,
+                explanation: "¡Exacto! ➡️ translateX() mueve el elemento horizontalmente sin afectar el flujo de la página. Un valor positivo mueve a la derecha y negativo a la izquierda. En las estrellas, translateX(120vw) las saca por el borde derecho de la pantalla."
+            },
+            {
+                question: "¿Qué es '@keyframes' en CSS?",
+                options: [
+                    "Una forma de seleccionar elementos por su posición en el HTML",
+                    "Una regla para definir los pasos de una animación",
+                    "Un tipo especial de variable para guardar valores CSS",
+                    "Una propiedad para controlar la velocidad del scroll"
+                ],
+                correct: 1,
+                explanation: "¡Perfecto! 🎞️ @keyframes define los 'fotogramas clave' de una animación: qué estilos tiene el elemento al inicio (0%), en el medio y al final (100%). En las estrellas se usan dos: 'shootingStar' para el movimiento y opacidad, y 'shootingStarTail' para el tamaño de la cola."
             }
         ];
         
@@ -916,185 +281,112 @@
         
         function loadQuestion() {
             resetQuestion();
-            
-            const currentQuestion = questions[currentQuestionIndex];
-            questionTextElement.textContent = currentQuestion.question;
+            const q = questions[currentQuestionIndex];
+            questionTextElement.textContent = q.question;
             questionNumberElement.textContent = currentQuestionIndex + 1;
             questionCounterElement.textContent = `${currentQuestionIndex + 1}/${questions.length}`;
-            
             optionsContainer.innerHTML = '';
+
+            // Crear array con opciones y cuál es la correcta, luego barajar
+            const shuffled = q.options.map((text, i) => ({ text, isCorrect: i === q.correct }));
+            for (let i = shuffled.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+            }
             
-            currentQuestion.options.forEach((option, index) => {
-                const optionElement = document.createElement('div');
-                optionElement.classList.add('option');
-                
-                const optionIcon = document.createElement('div');
-                optionIcon.classList.add('option-icon');
-                
-                const icons = ['fas fa-heart', 'fas fa-envelope', 'fas fa-stamp', 'fas fa-sparkles'];
-                optionIcon.innerHTML = `<i class="${icons[index]}"></i>`;
-                
-                optionElement.appendChild(optionIcon);
-                
-                const optionText = document.createElement('div');
-                optionText.textContent = option;
-                optionElement.appendChild(optionText);
-                
-                optionElement.addEventListener('click', () => selectOption(index, optionElement));
-                optionsContainer.appendChild(optionElement);
+            const icons = ['fas fa-star', 'fas fa-meteor', 'fas fa-moon', 'fas fa-sun'];
+            shuffled.forEach((option, index) => {
+                const el = document.createElement('div');
+                el.classList.add('option');
+                el.dataset.correct = option.isCorrect;
+                el.innerHTML = `<div class="option-icon"><i class="${icons[index]}"></i></div><div>${option.text}</div>`;
+                el.addEventListener('click', () => selectOption(option.isCorrect, el));
+                optionsContainer.appendChild(el);
             });
             
             feedbackContainer.style.display = 'none';
             btnNext.disabled = true;
         }
         
-        function selectOption(index, optionElement) {
+        function selectOption(isCorrect, optionElement) {
             if (selectedOption !== null) return;
-            
-            selectedOption = index;
+            selectedOption = optionElement;
             optionElement.classList.add('selected');
-            
-            const allOptions = document.querySelectorAll('.option');
-            allOptions.forEach(opt => {
-                opt.style.pointerEvents = 'none';
-            });
-            
+            document.querySelectorAll('.option').forEach(opt => opt.style.pointerEvents = 'none');
             showLoading();
-            
-            setTimeout(() => {
-                checkAnswer(index, optionElement);
-            }, 1500);
+            setTimeout(() => checkAnswer(isCorrect, optionElement), 1500);
         }
         
         function showLoading() {
-            const loadingMessages = [
-                "Comprobando respuesta...",
-                "Analizando tu elección...",
-                "¡Un momento por favor!",
-                "Procesando información..."
-            ];
-            
-            const randomMessage = loadingMessages[Math.floor(Math.random() * loadingMessages.length)];
-            loadingText.textContent = randomMessage;
-            
+            const msgs = ["Comprobando respuesta...", "Analizando tu elección...", "¡Un momento por favor!", "Procesando información..."];
+            loadingText.textContent = msgs[Math.floor(Math.random() * msgs.length)];
             loadingOverlay.classList.add('active');
         }
         
-        function hideLoading() {
-            loadingOverlay.classList.remove('active');
-        }
+        function hideLoading() { loadingOverlay.classList.remove('active'); }
         
         function createConfetti() {
             const colors = ['#FF6B9D', '#FEC163', '#6BCF7F', '#4D96FF', '#9B59B6', '#FFD93D', '#ff7b3d'];
-            const confettiCount = 50;
-            
-            for (let i = 0; i < confettiCount; i++) {
+            for (let i = 0; i < 50; i++) {
                 setTimeout(() => {
-                    const confetti = document.createElement('div');
-                    confetti.className = 'confetti';
-                    confetti.style.left = Math.random() * 100 + '%';
-                    confetti.style.top = '-10px';
-                    confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-                    confetti.style.animation = `confetti-fall ${2 + Math.random() * 2}s linear forwards`;
-                    confetti.style.animationDelay = Math.random() * 0.3 + 's';
-                    
-                    document.body.appendChild(confetti);
-                    
-                    setTimeout(() => confetti.remove(), 4000);
+                    const c = document.createElement('div');
+                    c.className = 'confetti';
+                    c.style.cssText = `left:${Math.random()*100}%;top:-10px;background-color:${colors[Math.floor(Math.random()*colors.length)]};animation:confetti-fall ${2+Math.random()*2}s linear forwards;animation-delay:${Math.random()*0.3}s`;
+                    document.body.appendChild(c);
+                    setTimeout(() => c.remove(), 4000);
                 }, i * 20);
             }
         }
         
-        function checkAnswer(index, optionElement) {
+        function checkAnswer(isCorrect, optionElement) {
             hideLoading();
-            
-            const correctIndex = questions[currentQuestionIndex].correct;
-            const isCorrect = index === correctIndex;
-            
-            const allOptions = document.querySelectorAll('.option');
-            allOptions.forEach((opt, i) => {
-                if (i === correctIndex) {
-                    opt.classList.add('correct');
-                } else if (i === index && !isCorrect) {
-                    opt.classList.add('incorrect');
-                }
+            document.querySelectorAll('.option').forEach(opt => {
+                if (opt.dataset.correct === 'true') opt.classList.add('correct');
+                else if (opt === optionElement && !isCorrect) opt.classList.add('incorrect');
             });
-            
-            if (isCorrect) {
-                score++;
-                scoreElement.textContent = score;
-                createConfetti();
-            }
-            
-            setTimeout(() => {
-                showFeedback(isCorrect);
-            }, 300);
-            
-            setTimeout(() => {
-                btnNext.disabled = false;
-            }, 500);
+            if (isCorrect) { score++; scoreElement.textContent = score; createConfetti(); }
+            setTimeout(() => showFeedback(isCorrect), 300);
+            setTimeout(() => btnNext.disabled = false, 500);
         }
         
         function showFeedback(isCorrect) {
-            const currentQuestion = questions[currentQuestionIndex];
-            
+            const q = questions[currentQuestionIndex];
             if (isCorrect) {
                 feedbackIcon.className = 'feedback-icon correct';
                 feedbackIcon.innerHTML = '<i class="fas fa-check-circle"></i>';
-                feedbackText.textContent = currentQuestion.explanation;
+                feedbackText.textContent = q.explanation;
             } else {
                 feedbackIcon.className = 'feedback-icon incorrect';
                 feedbackIcon.innerHTML = '<i class="fas fa-times-circle"></i>';
-                
-                const correctAnswer = currentQuestion.options[currentQuestion.correct];
-                feedbackText.textContent = `¡Buen intento! 💪 La respuesta correcta era: "${correctAnswer}". ${currentQuestion.explanation}`;
+                feedbackText.textContent = `¡Buen intento! 💪 La respuesta correcta era: "${q.options[q.correct]}". ${q.explanation}`;
             }
-            
             feedbackContainer.style.display = 'block';
         }
         
         function nextQuestion() {
             currentQuestionIndex++;
-            
-            if (currentQuestionIndex < questions.length) {
-                loadQuestion();
-            } else {
-                endGame();
-            }
+            if (currentQuestionIndex < questions.length) loadQuestion();
+            else endGame();
         }
         
         function endGame() {
             gameScreen.style.display = 'none';
             endScreen.style.display = 'block';
-            
             finalScoreElement.textContent = `${score}/${questions.length}`;
-            
-            if (score === questions.length) {
-                scoreMessageElement.textContent = "¡PERFECTO! 🏆 Eres un experto en CSS del Sobre de Amor";
-                createConfetti();
-            } else if (score >= questions.length * 0.7) {
-                scoreMessageElement.textContent = "¡MUY BIEN! 🌟 Dominas CSS muy bien";
-            } else if (score >= questions.length * 0.5) {
-                scoreMessageElement.textContent = "¡BUEN TRABAJO! 👍 Sigue aprendiendo CSS";
-            } else {
-                scoreMessageElement.textContent = "¡SIGUE PRACTICANDO! 💪 El CSS del sobre es genial";
-            }
+            if (score === questions.length) { scoreMessageElement.textContent = "¡PERFECTO! 🏆 ¡Eres un experto en CSS!"; createConfetti(); }
+            else if (score >= questions.length * 0.7) scoreMessageElement.textContent = "¡MUY BIEN! 🌟 Dominas CSS muy bien";
+            else if (score >= questions.length * 0.5) scoreMessageElement.textContent = "¡BUEN TRABAJO! 👍 Sigue aprendiendo CSS";
+            else scoreMessageElement.textContent = "¡SIGUE PRACTICANDO! 💪 ¡Tú puedes con el CSS!";
         }
         
         function restartGame() {
-            score = 0;
-            currentQuestionIndex = 0;
-            selectedOption = null;
-            
+            score = 0; currentQuestionIndex = 0; selectedOption = null;
             scoreElement.textContent = score;
-            
             endScreen.style.display = 'none';
             startScreen.style.display = 'block';
         }
         
-        function resetQuestion() {
-            selectedOption = null;
-        }
+        function resetQuestion() { selectedOption = null; }
     </script>
 </body>
 </html>
