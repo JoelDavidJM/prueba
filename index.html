@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz CSS - Estrellas Fugaces</title>
+    <title>Quiz CSS - Flores Animadas</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Comic Sans MS', 'Chalkboard SE', cursive; }
@@ -91,9 +91,9 @@
     
     <div class="container">
         <div class="start-screen" id="start-screen">
-            <h1 class="start-title">🌟 Quiz CSS - Estrellas Fugaces 🌟</h1>
-            <p class="start-subtitle">¡Pon a prueba tus conocimientos de CSS!</p>
-            <div class="character"><i class="fas fa-star"></i></div>
+            <h1 class="start-title">🌻 Quiz CSS - Flores Animadas 🌻</h1>
+            <p class="start-subtitle">¡Pon a prueba tus conocimientos del CSS de las flores!</p>
+            <div class="character"><i class="fas fa-seedling"></i></div>
             <button class="btn-start" id="btn-start"><i class="fas fa-play-circle"></i> ¡EMPEZAR!</button>
         </div>
         
@@ -139,114 +139,114 @@
         
         const questions = [
             {
-                question: "¿Para qué sirve 'position: fixed' en CSS?",
+                question: "¿Para qué sirve 'position: relative' en CSS?",
                 options: [
-                    "Fija el elemento respecto a su elemento padre",
-                    "Fija el elemento en pantalla y no se mueve aunque hagas scroll",
-                    "Hace que el elemento no se pueda mover con JavaScript",
-                    "Coloca el elemento siempre en la esquina superior izquierda"
+                    "Hace que el elemento flote sobre todos los demás",
+                    "Sirve de referencia para que los elementos hijos con position: absolute se posicionen respecto a él",
+                    "Mueve el elemento al centro de la pantalla",
+                    "Fija el elemento para que no se mueva con el scroll"
                 ],
                 correct: 1,
-                explanation: "¡Correcto! 📌 position: fixed ancla el elemento a la ventana del navegador (viewport). Sin importar cuánto hagas scroll, el elemento siempre queda en el mismo lugar de la pantalla. ¡Por eso se usa en las estrellas: siempre cubren toda la pantalla!"
+                explanation: "¡Correcto! 🌸 'position: relative' convierte al elemento en punto de referencia para sus hijos con 'position: absolute'. Sin él, los hijos se posicionarían respecto al body o al elemento padre más cercano que sí tenga position definido."
             },
             {
-                question: "¿Qué significa 'width: 100%' y 'height: 100%' en un elemento?",
+                question: "¿Qué hace la propiedad 'bottom' en CSS?",
                 options: [
-                    "El elemento mide exactamente 100 píxeles de ancho y alto",
-                    "El elemento ocupa el 100% del ancho y alto de su contenedor padre",
-                    "El elemento siempre ocupa toda la pantalla sin importar nada",
-                    "El elemento se agranda automáticamente con el contenido"
+                    "Agrega un margen inferior al elemento",
+                    "Reduce el tamaño del elemento desde abajo",
+                    "Coloca el elemento a cierta distancia desde el borde inferior de su contenedor",
+                    "Empuja el elemento hacia abajo dentro del flujo normal"
                 ],
-                correct: 1,
-                explanation: "¡Exacto! 📐 Los porcentajes (%) se calculan en relación al elemento padre. Con width: 100% y height: 100%, el elemento ocupa todo el espacio disponible dentro de su contenedor. En las estrellas, el padre es el viewport, ¡así cubren toda la pantalla!"
+                correct: 2,
+                explanation: "¡Muy bien! 📐 'bottom' posiciona el elemento a una distancia específica desde el borde inferior de su contenedor padre (cuando tiene position absolute o fixed). Por ejemplo, 'bottom: 10vmin' lo coloca a 10vmin desde abajo."
             },
             {
-                question: "¿Para qué sirve 'opacity: 0' en CSS?",
+                question: "¿Para qué sirve 'transform-origin' en CSS?",
                 options: [
-                    "Elimina el elemento del HTML completamente",
-                    "Hace el elemento invisible pero sigue ocupando su espacio",
-                    "Borra el color de fondo del elemento",
-                    "Hace que el elemento tenga transparencia solo en los bordes"
+                    "Mueve el elemento a una posición específica de la pantalla",
+                    "Define el punto desde donde se aplican las transformaciones como rotate o scale",
+                    "Cambia el origen del sistema de coordenadas de toda la página",
+                    "Centra el elemento dentro de su contenedor automáticamente"
                 ],
                 correct: 1,
-                explanation: "¡Muy bien! 👻 opacity: 0 hace el elemento completamente invisible, pero el elemento SIGUE existiendo y ocupando su espacio en la página. Es diferente a display: none. Las estrellas empiezan con opacity: 0 para aparecer suavemente con la animación."
+                explanation: "¡Excelente! 🌿 'transform-origin' define el punto de pivote para las transformaciones. Por ejemplo, con 'transform-origin: bottom center', si aplicas rotate(), el elemento girará desde su base, ¡como si fuera un tallo que se mece con el viento!"
             },
             {
-                question: "¿Qué hace 'position: absolute' en CSS?",
+                question: "¿Qué hace 'rotate()' dentro de la propiedad transform en CSS?",
                 options: [
-                    "Fija el elemento en pantalla igual que position: fixed",
-                    "Saca el elemento del flujo normal y lo posiciona relativo a su padre",
-                    "Coloca el elemento siempre en el centro de la página",
-                    "Hace que el elemento se superponga automáticamente sobre todo"
+                    "Mueve el elemento en diagonal",
+                    "Gira el elemento los grados que le indiques respecto a su transform-origin",
+                    "Refleja el elemento como un espejo",
+                    "Cambia la perspectiva 3D del elemento"
                 ],
                 correct: 1,
-                explanation: "¡Genial! 📍 position: absolute saca el elemento del flujo normal del documento y lo posiciona en relación al elemento padre más cercano que tenga position distinto de static. Se usa en la cola de la estrella (::before) para colocarla exactamente donde se necesita."
+                explanation: "¡Perfecto! 💨 'rotate()' gira el elemento los grados indicados. Un valor positivo gira en sentido horario y uno negativo en sentido antihorario. Alternando entre rotate(2deg) y rotate(-2deg) en una animación se consigue el efecto de balanceo, como una flor meciéndose con el viento."
             },
             {
-                question: "¿Qué es 'animation-delay' en CSS?",
+                question: "En @keyframes, si solo defines el 0% con transform: scale(0), ¿qué pasa con el 100%?",
                 options: [
-                    "La duración total de la animación en segundos",
-                    "El tiempo que espera el elemento antes de empezar la animación",
-                    "El número de veces que se repite la animación",
-                    "La velocidad máxima que alcanza la animación"
+                    "La animación falla porque le falta el keyframe final",
+                    "El elemento queda invisible para siempre",
+                    "CSS usa automáticamente el estilo natural del elemento como estado final",
+                    "El elemento parpadea entre visible e invisible"
                 ],
-                correct: 1,
-                explanation: "¡Perfecto! ⏱️ animation-delay define cuánto tiempo espera el elemento antes de iniciar su animación. En las estrellas fugaces cada una tiene un delay diferente (0s, 2s, 4s, 6s...) para que no salgan todas juntas y parezca más natural y aleatorio."
+                correct: 2,
+                explanation: "¡Brillante! ✨ Cuando solo defines el 0%, CSS toma el estado actual del elemento (su tamaño y estilo normales) como el 100%. Así, si empieza en scale(0), crecerá hasta scale(1) solo, ¡creando un bonito efecto de aparición o florecimiento!"
             },
             {
-                question: "¿Qué hace 'border-radius: 50%' en un elemento cuadrado?",
+                question: "¿Para qué sirve 'animation-delay' en CSS?",
                 options: [
-                    "Redondea solo las dos esquinas superiores del elemento",
-                    "Convierte el elemento en un círculo perfecto",
-                    "Agrega un borde redondeado de 50 píxeles al elemento",
-                    "Rota el elemento 50 grados sobre su centro"
+                    "Define cuánto tiempo dura la animación en total",
+                    "Controla cuántas veces se repite la animación",
+                    "Indica cuánto tiempo espera el elemento antes de iniciar su animación",
+                    "Cambia la velocidad de la animación a lo largo del tiempo"
                 ],
-                correct: 1,
-                explanation: "¡Excelente! ⭕ border-radius: 50% redondea las esquinas al 50% del tamaño del elemento. Si el elemento es cuadrado (mismo ancho y alto), el resultado es un círculo perfecto. ¡Así se crea el puntito redondo de la estrella fugaz!"
+                correct: 2,
+                explanation: "¡Correcto! ⏱️ 'animation-delay' hace que el elemento espere ese tiempo antes de empezar a animarse. Es muy útil para crear efectos escalonados: por ejemplo, que primero aparezca un tallo y después, con un pequeño delay, florezcan los pétalos."
             },
             {
-                question: "¿Para qué sirve 'z-index' en CSS?",
+                question: "¿Qué hace 'filter: blur()' en CSS?",
                 options: [
-                    "Para mover el elemento hacia la izquierda o la derecha",
-                    "Para controlar qué elemento aparece encima de otro",
-                    "Para hacer zoom en un elemento específico",
-                    "Para definir qué tan grande se ve el elemento en pantalla"
+                    "Hace el elemento completamente invisible",
+                    "Aplica un desenfoque al elemento, difuminando sus bordes y colores",
+                    "Agrega un borde nítido y brillante al elemento",
+                    "Reduce la saturación de colores del elemento"
                 ],
                 correct: 1,
-                explanation: "¡Correcto! 🎴 z-index controla el orden de apilamiento entre elementos en el eje Z (profundidad). Un elemento con z-index mayor aparece encima de uno con z-index menor. Las estrellas tienen z-index: 1 para aparecer sobre el fondo pero debajo del contenido principal."
+                explanation: "¡Muy bien! 🌟 'filter: blur()' desenfoca el elemento según el valor que le des. Combinado con un color de fondo, crea un efecto de resplandor o aura difuminada, muy usado en CSS para simular luces o brillos mágicos alrededor de elementos."
             },
             {
-                question: "En la animación, ¿qué significa 'infinite'?",
+                question: "¿Qué hace 'left: 50%' en un elemento con position: absolute?",
                 options: [
-                    "La animación dura un tiempo infinito (muy lento)",
-                    "La animación se repite sin parar para siempre",
-                    "La animación tiene velocidad infinita (instantánea)",
-                    "La animación espera infinitamente antes de empezar"
+                    "Centra el elemento perfectamente en su contenedor",
+                    "Coloca el borde izquierdo del elemento en la mitad del ancho de su contenedor",
+                    "Mueve el elemento 50 píxeles a la derecha",
+                    "Hace que el elemento ocupe el 50% del ancho disponible"
                 ],
                 correct: 1,
-                explanation: "¡Muy bien! 🔁 La palabra 'infinite' en una animación CSS hace que se repita sin parar, de forma continua. Si no se pone, la animación se ejecuta solo una vez y termina. Las estrellas fugaces usan 'infinite' para que sigan apareciendo constantemente."
+                explanation: "¡Correcto! 🌼 'left: 50%' coloca el borde IZQUIERDO del elemento justo en el centro del contenedor. Si quieres centrarlo completamente, necesitarías combinarlo con 'transform: translateX(-50%)' para compensar el ancho propio del elemento."
             },
             {
-                question: "¿Qué hace 'transform: translateX()' en CSS?",
+                question: "¿Qué dibuja 'repeating-conic-gradient' en CSS?",
                 options: [
-                    "Rota el elemento en el eje horizontal",
-                    "Mueve el elemento hacia la izquierda o la derecha",
-                    "Escala el elemento en el eje horizontal",
-                    "Cambia el color del elemento de izquierda a derecha"
+                    "Un degradado en línea recta que se repite",
+                    "Un patrón circular repetido como sectores o segmentos alrededor de un punto central",
+                    "Círculos concéntricos de colores alternados",
+                    "Un degradado de arriba hacia abajo que se repite"
                 ],
                 correct: 1,
-                explanation: "¡Exacto! ➡️ translateX() mueve el elemento horizontalmente sin afectar el flujo de la página. Un valor positivo mueve a la derecha y negativo a la izquierda. En las estrellas, translateX(120vw) las saca por el borde derecho de la pantalla."
+                explanation: "¡Fantástico! 🌻 'repeating-conic-gradient' crea un patrón que gira alrededor de un centro, formando segmentos como los de una tarta o los pétalos de una flor. Si alternas colores cada 15 grados, obtienes un patrón en abanico que puede imitar, por ejemplo, las semillas de un girasol."
             },
             {
-                question: "¿Qué es '@keyframes' en CSS?",
+                question: "¿Para qué sirve 'translateX()' dentro de transform en CSS?",
                 options: [
-                    "Una forma de seleccionar elementos por su posición en el HTML",
-                    "Una regla para definir los pasos de una animación",
-                    "Un tipo especial de variable para guardar valores CSS",
-                    "Una propiedad para controlar la velocidad del scroll"
+                    "Rota el elemento sobre el eje horizontal",
+                    "Escala el elemento horizontalmente",
+                    "Mueve el elemento hacia la izquierda o derecha sin afectar el flujo de la página",
+                    "Cambia el punto de origen del elemento en el eje X"
                 ],
-                correct: 1,
-                explanation: "¡Perfecto! 🎞️ @keyframes define los 'fotogramas clave' de una animación: qué estilos tiene el elemento al inicio (0%), en el medio y al final (100%). En las estrellas se usan dos: 'shootingStar' para el movimiento y opacidad, y 'shootingStarTail' para el tamaño de la cola."
+                correct: 2,
+                explanation: "¡Perfecto! 🌱 'translateX()' desplaza el elemento horizontalmente: valores positivos lo mueven a la derecha y negativos a la izquierda. Al alternarlo con valores positivos y negativos en cada keyframe mientras el elemento sube, se crea un movimiento en zigzag, ¡mucho más natural que subir en línea recta!"
             }
         ];
         
@@ -287,14 +287,13 @@
             questionCounterElement.textContent = `${currentQuestionIndex + 1}/${questions.length}`;
             optionsContainer.innerHTML = '';
 
-            // Crear array con opciones y cuál es la correcta, luego barajar
             const shuffled = q.options.map((text, i) => ({ text, isCorrect: i === q.correct }));
             for (let i = shuffled.length - 1; i > 0; i--) {
                 const j = Math.floor(Math.random() * (i + 1));
                 [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
             }
             
-            const icons = ['fas fa-star', 'fas fa-meteor', 'fas fa-moon', 'fas fa-sun'];
+            const icons = ['fas fa-leaf', 'fas fa-seedling', 'fas fa-sun', 'fas fa-spa'];
             shuffled.forEach((option, index) => {
                 const el = document.createElement('div');
                 el.classList.add('option');
@@ -373,8 +372,8 @@
             gameScreen.style.display = 'none';
             endScreen.style.display = 'block';
             finalScoreElement.textContent = `${score}/${questions.length}`;
-            if (score === questions.length) { scoreMessageElement.textContent = "¡PERFECTO! 🏆 ¡Eres un experto en CSS!"; createConfetti(); }
-            else if (score >= questions.length * 0.7) scoreMessageElement.textContent = "¡MUY BIEN! 🌟 Dominas CSS muy bien";
+            if (score === questions.length) { scoreMessageElement.textContent = "¡PERFECTO! 🏆 ¡Eres un experto en CSS de flores!"; createConfetti(); }
+            else if (score >= questions.length * 0.7) scoreMessageElement.textContent = "¡MUY BIEN! 🌟 Dominas el CSS de flores muy bien";
             else if (score >= questions.length * 0.5) scoreMessageElement.textContent = "¡BUEN TRABAJO! 👍 Sigue aprendiendo CSS";
             else scoreMessageElement.textContent = "¡SIGUE PRACTICANDO! 💪 ¡Tú puedes con el CSS!";
         }
