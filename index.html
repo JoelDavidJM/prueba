@@ -139,114 +139,114 @@
         
         const questions = [
             {
-                question: "¿Para qué sirve una variable en CSS?",
+                question: "¿Para qué sirve left en CSS?",
                 options: [
-                    "Para animar un elemento automáticamente",
-                    "Para guardar un valor y reutilizarlo en muchos lugares con var()",
-                    "Para cambiar el color del fondo de la página",
-                    "Para definir el tamaño de la fuente del texto"
+                    "Para definir el color del borde izquierdo del elemento",
+                    "Para indicar a qué distancia del lado izquierdo de su contenedor se coloca el elemento",
+                    "Para alinear el texto hacia la izquierda",
+                    "Para mover el elemento hacia abajo"
                 ],
                 correct: 1,
-                explanation: "¡Correcto! 🌿 Una variable CSS guarda un valor (como un número, color o tamaño) y te deja usarlo en cualquier parte con var(--nombre). Si cambias la variable, todos los lugares donde se usa se actualizan solos."
-            },
-            {
-                question: "¿Para qué sirve width en CSS?",
-                options: [
-                    "Para definir el alto del elemento",
-                    "Para definir el ancho del elemento",
-                    "Para mover el elemento hacia los lados",
-                    "Para cambiar el grosor del borde"
-                ],
-                correct: 1,
-                explanation: "¡Muy bien! 📏 width define el ancho de un elemento. Puedes usar píxeles, porcentajes, vmin, etc. En el código de las flores se usa para definir el ancho de cada hoja."
-            },
-            {
-                question: "¿Para qué sirve height en CSS?",
-                options: [
-                    "Para definir el ancho del elemento",
-                    "Para ocultar el elemento de la pantalla",
-                    "Para definir la altura del elemento",
-                    "Para alinear el elemento verticalmente"
-                ],
-                correct: 2,
-                explanation: "¡Perfecto! 📐 height define la altura de un elemento. En el código de las flores se usa tanto para el tallo (height: 70vmin) como para las hojas, calculando su altura con calc() a partir del ancho."
-            },
-            {
-                question: "¿Para qué sirve position: absolute en CSS?",
-                options: [
-                    "Para centrar el elemento en la pantalla",
-                    "Para sacar el elemento del flujo normal y posicionarlo con top, left, right o bottom",
-                    "Para fijar el elemento y que no se mueva al hacer scroll",
-                    "Para hacer que el elemento ocupe todo el ancho disponible"
-                ],
-                correct: 1,
-                explanation: "¡Excelente! 📌 position: absolute saca al elemento del flujo normal de la página. Luego puedes usar top, left, right o bottom para colocarlo exactamente donde quieras dentro de su contenedor. Así se posicionan las hojas sobre el tallo."
+                explanation: "¡Correcto! 📍 left indica a qué distancia del borde izquierdo del contenedor se posiciona el elemento. Con valores positivos se aleja del borde, con valores negativos puede salir fuera de la pantalla. Solo funciona cuando el elemento tiene position distinto de static."
             },
             {
                 question: "¿Para qué sirve transform: rotate() en CSS?",
                 options: [
-                    "Para mover el elemento hacia arriba o abajo",
+                    "Para mover el elemento hacia los lados",
                     "Para girar el elemento los grados que le indiques",
-                    "Para cambiar el tamaño del elemento",
+                    "Para hacer el elemento más grande o pequeño",
                     "Para voltear el elemento como un espejo"
                 ],
                 correct: 1,
-                explanation: "¡Correcto! 🔄 rotate() gira el elemento los grados que le pongas. Positivo gira a la derecha, negativo gira a la izquierda. En las flores se usa para inclinar las hojas y que queden en diagonal a los lados del tallo."
+                explanation: "¡Muy bien! 🔄 rotate() gira el elemento los grados que le indiques. Los grados positivos giran hacia la derecha (sentido horario) y los negativos hacia la izquierda (sentido antihorario). Se usa mucho para inclinar elementos decorativos."
             },
             {
-                question: "¿Para qué sirve transform: scale() en CSS?",
+                question: "¿Para qué sirve animation-delay en CSS?",
                 options: [
-                    "Para rotar el elemento en 3D",
-                    "Para mover el elemento a escala de grises",
-                    "Para agrandar o achicar el elemento",
-                    "Para cambiar la transparencia del elemento"
+                    "Para hacer que la animación vaya más lenta",
+                    "Para definir cuántas veces se repite la animación",
+                    "Para que el elementos espere un tiempo antes de comenzar su animación",
+                    "Para pausar la animación a la mitad"
                 ],
                 correct: 2,
-                explanation: "¡Brillante! 🔍 scale() agranda o achica el elemento. scale(0) lo hace invisible, scale(1) es su tamaño normal, scale(2) lo duplica. En las animaciones de las hojas empieza en scale(0) y crece hasta scale(1), creando el efecto de florecimiento."
+                explanation: "¡Perfecto! ⏱️ animation-delay define cuánto tiempo espera el elemento antes de arrancar su animación. Es muy útil para crear efectos escalonados, haciendo que distintos elementos empiecen a animarse en momentos diferentes."
             },
             {
-                question: "¿Para qué sirve border-radius en CSS?",
+                question: "¿Para qué sirve z-index en CSS?",
                 options: [
-                    "Para agregar un borde de color al elemento",
-                    "Para redondear las esquinas del elemento",
-                    "Para definir el grosor del borde",
-                    "Para hacer el borde punteado o discontinuo"
+                    "Para definir el tamaño del elemento en el eje Z",
+                    "Para controlar qué elemento se muestra encima o detrás de otro",
+                    "Para mover el elemento hacia arriba o hacia abajo en la pantalla",
+                    "Para aplicar una sombra tridimensional al elemento"
                 ],
                 correct: 1,
-                explanation: "¡Muy bien! 🌿 border-radius redondea las esquinas. En las flores se aplica solo a 2 esquinas opuestas de cada hoja (por ejemplo border-top-right-radius y border-bottom-left-radius), lo que transforma un rectángulo en una forma de hoja."
+                explanation: "¡Excelente! 🗂️ z-index controla el orden de apilamiento de los elementos. Un número mayor queda encima, uno menor queda detrás. Con valores negativos el elemento se va detrás del contenido normal de la página. Solo funciona en elementos con position distinto de static."
             },
             {
-                question: "¿Para qué sirve animation en CSS?",
+                question: "¿Para qué sirve transform: rotateY() en CSS?",
                 options: [
-                    "Para cambiar el color de un elemento al hacer clic",
-                    "Para aplicar una animación definida con @keyframes a un elemento",
-                    "Para hacer que el elemento aparezca al cargar la página",
-                    "Para agregar efectos de sonido al elemento"
+                    "Para mover el elemento hacia arriba o hacia abajo",
+                    "Para girar el elemento sobre su eje vertical, como una puerta que se abre, creando un efecto 3D",
+                    "Para voltear el elemento de arriba a abajo",
+                    "Para rotar el elemento en sentido antihorario"
                 ],
                 correct: 1,
-                explanation: "¡Perfecto! 🎬 La propiedad animation conecta un elemento con una animación creada en @keyframes. También controla la duración, el delay y cuántas veces se repite. En las flores anima tanto el crecimiento del tallo como el florecimiento de cada hoja."
+                explanation: "¡Brillante! 🌐 rotateY() gira el elemento sobre su eje vertical, igual que una puerta girando sobre sus bisagras. Crea un efecto tridimensional muy natural. Se usa combinado con rotate() para dar movimientos más realistas a los elementos."
             },
             {
-                question: "¿Para qué sirve background-image: linear-gradient() en CSS?",
+                question: "¿Para qué sirve la unidad vmin en CSS?",
                 options: [
-                    "Para poner una imagen descargada de internet como fondo",
-                    "Para crear un fondo con degradado que va de un color a otro",
-                    "Para repetir un color en forma de líneas",
-                    "Para hacer el fondo transparente con colores"
+                    "Es lo mismo que los píxeles pero más pequeños",
+                    "Es el 1% del lado más pequeño entre el ancho y el alto de la ventana",
+                    "Es el 1% del ancho total de la pantalla",
+                    "Es una unidad fija que no cambia con el tamaño de la pantalla"
                 ],
                 correct: 1,
-                explanation: "¡Excelente! 🎨 linear-gradient crea un degradado de colores como fondo. Puedes elegir la dirección (to top, to left) y los colores. En el tallo se usan dos gradientes apilados: uno da el color verde y el otro agrega sombra lateral para dar volumen."
+                explanation: "¡Correcto! 📐 vmin equivale al 1% del lado más pequeño de la ventana (ya sea el ancho o el alto). Esto hace que los tamaños sean proporcionales y se adapten bien a cualquier pantalla, tanto horizontal como vertical."
             },
             {
-                question: "¿Para qué sirve @keyframes en CSS?",
+                question: "¿Para qué sirve transform-origin en CSS?",
                 options: [
-                    "Para definir los estilos que tendrá un elemento en cada momento de una animación",
-                    "Para importar animaciones de otras páginas web",
-                    "Para controlar la velocidad del scroll de la página",
-                    "Para guardar configuraciones de animación para usarlas después"
+                    "Para mover el elemento desde su origen al centro de la pantalla",
+                    "Para definir el punto desde donde ocurren las transformaciones como rotate o scale",
+                    "Para indicar el punto de partida de una animación",
+                    "Para centrar el elemento dentro de su contenedor"
                 ],
-                correct: 0,
-                explanation: "¡Correcto! 🎞️ @keyframes define paso a paso cómo cambia un elemento durante la animación. Puedes indicar el estado al 0% (inicio), al 100% (final) o en cualquier punto intermedio. En las flores define cómo crecen el tallo y las hojas desde cero."
+                correct: 1,
+                explanation: "¡Muy bien! 📌 transform-origin define el punto de referencia desde donde se aplican las transformaciones. Por ejemplo, con transform-origin: bottom center una rotación girará el elemento desde su base, como una flor moviéndose desde su raíz."
+            },
+            {
+                question: "¿Para qué sirve animation: infinite en CSS?",
+                options: [
+                    "Para que la animación sea muy larga en duración",
+                    "Para que la animación se repita sin parar indefinidamente",
+                    "Para que la animación no tenga delay",
+                    "Para que la animación vaya a velocidad máxima"
+                ],
+                correct: 1,
+                explanation: "¡Perfecto! 🔁 infinite es el valor que se le da al número de repeticiones de una animación. Hace que el ciclo de animación se repita sin parar. Se usa en movimientos continuos como el balanceo de las flores."
+            },
+            {
+                question: "¿Para qué sirve animation: linear en CSS?",
+                options: [
+                    "Para hacer que la animación vaya en línea recta",
+                    "Para que la animación mantenga la misma velocidad de principio a fin",
+                    "Para que la animación empiece rápido y termine lento",
+                    "Para que la animación solo se reproduzca una vez"
+                ],
+                correct: 1,
+                explanation: "¡Excelente! ➡️ linear es el valor de timing-function que hace que la animación avance a velocidad constante desde el inicio hasta el final, sin aceleraciones ni frenadas. Es ideal para movimientos continuos y uniformes."
+            },
+            {
+                question: "¿Para qué sirve animation: backwards en CSS?",
+                options: [
+                    "Para que la animación vaya hacia atrás al terminar",
+                    "Para que el elemento tome los estilos del inicio de la animación antes de que ésta empiece",
+                    "Para que la animación empiece desde el final",
+                    "Para invertir la dirección de la animación"
+                ],
+                correct: 1,
+                explanation: "¡Correcto! ⏪ backwards hace que el elemento aplique los estilos del 0% de la animación incluso durante el delay, antes de que arranque. Así el elemento no aparece con su estilo normal y luego salta al inicio de la animación, sino que ya empieza desde ese estado."
             }
         ];
         
