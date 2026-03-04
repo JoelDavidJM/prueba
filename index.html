@@ -31,6 +31,7 @@
         .question-card { background-color: #ffda79; border-radius: 25px; padding: 40px; margin-bottom: 40px; border: 8px solid #ffb347; position: relative; box-shadow: 0 10px 20px rgba(255,179,71,0.3); }
         .question-number { position: absolute; top: -20px; left: 30px; background-color: #ff7b3d; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 2rem; font-weight: bold; border: 5px solid white; box-shadow: 0 5px 15px rgba(255,123,61,0.4); }
         .question-text { font-size: 2.2rem; color: #333; line-height: 1.4; text-align: center; padding-top: 10px; }
+
         .options-container { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin-bottom: 40px; }
         .option { background: linear-gradient(145deg, #ffffff, #f0f0f0); border-radius: 25px; padding: 30px 20px; font-size: 1.8rem; color: #333; cursor: pointer; transition: all 0.4s ease; text-align: center; min-height: 140px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; box-shadow: 0 8px 15px rgba(0,0,0,0.1); border: 5px solid transparent; }
         .option::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 10px; background: linear-gradient(90deg, #ff7b3d, #ffda79); transform: translateY(-100%); transition: transform 0.3s ease; }
@@ -111,6 +112,7 @@
             <div class="question-card">
                 <div class="question-number" id="question-number">1</div>
                 <div class="question-text" id="question-text">Cargando pregunta...</div>
+
             </div>
             <div class="options-container" id="options-container"></div>
             <div class="feedback-container" id="feedback-container">
@@ -139,114 +141,114 @@
         
         const questions = [
             {
-                question: "¿Para qué sirve left en CSS?",
+                question: "¿Qué hace border-top-right-radius: 100%?",
                 options: [
-                    "Para definir el color del borde izquierdo del elemento",
-                    "Para indicar a qué distancia del lado izquierdo de su contenedor se coloca el elemento",
-                    "Para alinear el texto hacia la izquierda",
-                    "Para mover el elemento hacia abajo"
+                    "Pone un borde grueso en la esquina superior derecha",
+                    "Redondea completamente solo la esquina superior derecha del elemento",
+                    "Hace que el elemento sea completamente circular",
+                    "Empuja el elemento hacia la esquina superior derecha de la pantalla"
                 ],
                 correct: 1,
-                explanation: "¡Correcto! 📍 left indica a qué distancia del borde izquierdo del contenedor se posiciona el elemento. Con valores positivos se aleja del borde, con valores negativos puede salir fuera de la pantalla. Solo funciona cuando el elemento tiene position distinto de static."
+                explanation: "¡Correcto! 🌿 border-top-right-radius: 100% redondea por completo solo la esquina superior derecha del elemento. En el CSS de la flor, combinado con border-right (solo borde derecho visible), crea esa forma curva característica de la punta del pasto."
             },
             {
-                question: "¿Para qué sirve transform: rotate() en CSS?",
+                question: "¿Qué hace filter: blur(0.1vmin)?",
                 options: [
-                    "Para mover el elemento hacia los lados",
-                    "Para girar el elemento los grados que le indiques",
-                    "Para hacer el elemento más grande o pequeño",
-                    "Para voltear el elemento como un espejo"
+                    "Hace el elemento completamente invisible",
+                    "Aplica un desenfoque muy suave que da sensación de profundidad y suaviza los bordes",
+                    "Mueve el elemento 0.1vmin hacia la izquierda",
+                    "Hace que el elemento parpadee ligeramente"
                 ],
                 correct: 1,
-                explanation: "¡Muy bien! 🔄 rotate() gira el elemento los grados que le indiques. Los grados positivos giran hacia la derecha (sentido horario) y los negativos hacia la izquierda (sentido antihorario). Se usa mucho para inclinar elementos decorativos."
+                explanation: "¡Muy bien! 🌌 filter: blur() aplica un desenfoque gaussiano al elemento. Con solo 0.1vmin el efecto es muy sutil, casi imperceptible, pero da una suavidad al fondo de la noche que lo hace más realista y menos pixelado."
             },
             {
-                question: "¿Para qué sirve animation-delay en CSS?",
+                question: "¿Qué hace bottom: -30px en un elemento con position: absolute?",
                 options: [
-                    "Para hacer que la animación vaya más lenta",
-                    "Para definir cuántas veces se repite la animación",
-                    "Para que el elementos espere un tiempo antes de comenzar su animación",
-                    "Para pausar la animación a la mitad"
+                    "Mueve el elemento 30px hacia arriba dentro del contenedor",
+                    "Sube el elemento 30px desde el suelo",
+                    "Desplaza el elemento 30px por debajo del borde inferior del contenedor, saliendo parcialmente fuera",
+                    "Añade un margen de 30px en la parte inferior"
                 ],
                 correct: 2,
-                explanation: "¡Perfecto! ⏱️ animation-delay define cuánto tiempo espera el elemento antes de arrancar su animación. Es muy útil para crear efectos escalonados, haciendo que distintos elementos empiecen a animarse en momentos diferentes."
+                explanation: "¡Perfecto! 📐 Con bottom negativo el elemento sale por debajo del borde del contenedor. En el CSS de las flores, el círculo decorativo queda medio escondido saliendo por abajo, creando ese efecto de burbuja asomando en la esquina."
             },
             {
-                question: "¿Para qué sirve z-index en CSS?",
+                question: "¿Qué hace opacity: 0.3?",
                 options: [
-                    "Para definir el tamaño del elemento en el eje Z",
-                    "Para controlar qué elemento se muestra encima o detrás de otro",
-                    "Para mover el elemento hacia arriba o hacia abajo en la pantalla",
-                    "Para aplicar una sombra tridimensional al elemento"
+                    "Hace el elemento 3 veces más transparente que lo normal",
+                    "Hace que el elemento sea un 30% visible, quedando muy transparente",
+                    "Aplica un 30% de color oscuro encima del elemento",
+                    "Reduce el tamaño del elemento al 30%"
                 ],
                 correct: 1,
-                explanation: "¡Excelente! 🗂️ z-index controla el orden de apilamiento de los elementos. Un número mayor queda encima, uno menor queda detrás. Con valores negativos el elemento se va detrás del contenido normal de la página. Solo funciona en elementos con position distinto de static."
+                explanation: "¡Excelente! 👻 opacity va de 0 (invisible) a 1 (completamente visible). Con 0.3 el elemento es solo un 30% opaco, quedando muy transparente. Así las nebulosas del fondo se ven como manchas de color suaves y etéreas en el cielo nocturno."
             },
             {
-                question: "¿Para qué sirve transform: rotateY() en CSS?",
+                question: "¿Qué hace box-shadow: inset 0 0 2px rgba(0,0,0,0.7)?",
                 options: [
-                    "Para mover el elemento hacia arriba o hacia abajo",
-                    "Para girar el elemento sobre su eje vertical, como una puerta que se abre, creando un efecto 3D",
-                    "Para voltear el elemento de arriba a abajo",
-                    "Para rotar el elemento en sentido antihorario"
+                    "Pone una sombra exterior que rodea el elemento por fuera",
+                    "Pone una sombra interior dentro del propio elemento, simulando profundidad",
+                    "Crea un borde oscuro alrededor del elemento",
+                    "Hace que el elemento se vea hundido en la pantalla"
                 ],
                 correct: 1,
-                explanation: "¡Brillante! 🌐 rotateY() gira el elemento sobre su eje vertical, igual que una puerta girando sobre sus bisagras. Crea un efecto tridimensional muy natural. Se usa combinado con rotate() para dar movimientos más realistas a los elementos."
+                explanation: "¡Brillante! 🌿 La palabra clave inset hace que la sombra se dibuje dentro del elemento en lugar de fuera. Esto da al tallo de la flor un efecto de volumen y profundidad, como si fuera un tallo real con luz incidiendo desde un lado."
             },
             {
-                question: "¿Para qué sirve la unidad vmin en CSS?",
+                question: "¿Qué hace transform-origin: bottom center?",
                 options: [
-                    "Es lo mismo que los píxeles pero más pequeños",
-                    "Es el 1% del lado más pequeño entre el ancho y el alto de la ventana",
-                    "Es el 1% del ancho total de la pantalla",
-                    "Es una unidad fija que no cambia con el tamaño de la pantalla"
+                    "Mueve el elemento al centro inferior de la pantalla",
+                    "Hace que las transformaciones como rotate o scale ocurran desde la parte inferior del elemento",
+                    "Centra el elemento dentro de su contenedor en la parte de abajo",
+                    "Fija el elemento al fondo de la página"
                 ],
                 correct: 1,
-                explanation: "¡Correcto! 📐 vmin equivale al 1% del lado más pequeño de la ventana (ya sea el ancho o el alto). Esto hace que los tamaños sean proporcionales y se adapten bien a cualquier pantalla, tanto horizontal como vertical."
+                explanation: "¡Muy bien! 📌 transform-origin define el punto de referencia desde donde se aplican rotate, scale, etc. Con bottom center, la hoja rota desde su base (donde se une al tallo), igual que las hojas reales crecen y se abren desde su punto de unión con la rama."
             },
             {
-                question: "¿Para qué sirve transform-origin en CSS?",
+                question: "¿Qué hace pointer-events: none?",
                 options: [
-                    "Para mover el elemento desde su origen al centro de la pantalla",
-                    "Para definir el punto desde donde ocurren las transformaciones como rotate o scale",
-                    "Para indicar el punto de partida de una animación",
-                    "Para centrar el elemento dentro de su contenedor"
+                    "Hace que el elemento no se pueda ver con el ratón encima",
+                    "El elemento no reacciona a ningún clic ni evento del ratón, el cursor lo atraviesa como si no existiera",
+                    "Desactiva las animaciones cuando el usuario mueve el ratón",
+                    "Convierte el cursor en una flecha cuando pasa por encima"
                 ],
                 correct: 1,
-                explanation: "¡Muy bien! 📌 transform-origin define el punto de referencia desde donde se aplican las transformaciones. Por ejemplo, con transform-origin: bottom center una rotación girará el elemento desde su base, como una flor moviéndose desde su raíz."
+                explanation: "¡Correcto! 🖱️ pointer-events: none hace que el elemento sea completamente invisible para el ratón. Los clics y hovers lo atraviesan y llegan a los elementos de abajo. Perfecto para capas decorativas de fondo como las estrellas, que no deben interferir con la interacción."
             },
             {
-                question: "¿Para qué sirve animation: infinite en CSS?",
+                question: "En un @keyframes, ¿qué representan los porcentajes como 0%, 50% y 100%?",
                 options: [
-                    "Para que la animación sea muy larga en duración",
-                    "Para que la animación se repita sin parar indefinidamente",
-                    "Para que la animación no tenga delay",
-                    "Para que la animación vaya a velocidad máxima"
+                    "El porcentaje de velocidad de la animación en ese momento",
+                    "El porcentaje del tamaño del elemento en cada punto",
+                    "Los puntos en el tiempo de la animación: 0% es el inicio, 100% es el final",
+                    "El porcentaje de opacidad que tiene el elemento"
                 ],
-                correct: 1,
-                explanation: "¡Perfecto! 🔁 infinite es el valor que se le da al número de repeticiones de una animación. Hace que el ciclo de animación se repita sin parar. Se usa en movimientos continuos como el balanceo de las flores."
+                correct: 2,
+                explanation: "¡Perfecto! ⏱️ En @keyframes los porcentajes representan momentos en el tiempo de la animación. 0% es justo cuando empieza, 50% es a la mitad, 100% es cuando termina. Así puedes controlar exactamente qué aspecto tiene el elemento en cada etapa."
             },
             {
-                question: "¿Para qué sirve animation: linear en CSS?",
+                question: "¿Qué hace radial-gradient(circle, rgba(138,43,226,0.6), transparent)?",
                 options: [
-                    "Para hacer que la animación vaya en línea recta",
-                    "Para que la animación mantenga la misma velocidad de principio a fin",
-                    "Para que la animación empiece rápido y termine lento",
-                    "Para que la animación solo se reproduzca una vez"
+                    "Crea un degradado que va de izquierda a derecha en forma de círculo",
+                    "Crea un degradado que empieza con color morado en el centro y se desvanece hacia los bordes",
+                    "Dibuja un círculo morado sólido sin transparencia",
+                    "Hace que el fondo cambie de color cada vez que el usuario hace clic"
                 ],
                 correct: 1,
-                explanation: "¡Excelente! ➡️ linear es el valor de timing-function que hace que la animación avance a velocidad constante desde el inicio hasta el final, sin aceleraciones ni frenadas. Es ideal para movimientos continuos y uniformes."
+                explanation: "¡Brillante! 🟣 radial-gradient crea un degradado que irradia desde el centro hacia afuera. Con circle el centro es morado (rgba con 0.6 de opacidad) y se va volviendo transparente hacia los bordes. Combinado con filter: blur(60px) crea ese efecto de nebulosa difusa y etérea."
             },
             {
-                question: "¿Para qué sirve animation: backwards en CSS?",
+                question: "¿Qué consigue usar background-color: rgba(0,0,0,0.6) junto a filter: blur(1.5vmin)?",
                 options: [
-                    "Para que la animación vaya hacia atrás al terminar",
-                    "Para que el elemento tome los estilos del inicio de la animación antes de que ésta empiece",
-                    "Para que la animación empiece desde el final",
-                    "Para invertir la dirección de la animación"
+                    "Pone el elemento completamente negro e invisible",
+                    "Crea una capa oscura y difuminada que simula sombra y da profundidad al elemento de abajo",
+                    "Añade un borde negro borroso alrededor del elemento",
+                    "Hace que el elemento brille con luz negra"
                 ],
                 correct: 1,
-                explanation: "¡Correcto! ⏪ backwards hace que el elemento aplique los estilos del 0% de la animación incluso durante el delay, antes de que arranque. Así el elemento no aparece con su estilo normal y luego salta al inicio de la animación, sino que ya empieza desde ese estado."
+                explanation: "¡Excelente! 🌿 rgba(0,0,0,0.6) es negro con 60% de opacidad. Al combinarlo con filter: blur() borroso, crea una sombra suave y realista que da profundidad y volumen. Es una técnica muy usada en el CSS de las flores para que el pasto parezca tener dimensión."
             }
         ];
         
@@ -262,6 +264,7 @@
         const questionCounterElement = document.getElementById('question-counter');
         const questionNumberElement = document.getElementById('question-number');
         const questionTextElement = document.getElementById('question-text');
+
         const optionsContainer = document.getElementById('options-container');
         const feedbackContainer = document.getElementById('feedback-container');
         const feedbackIcon = document.getElementById('feedback-icon');
@@ -285,6 +288,7 @@
             questionTextElement.textContent = q.question;
             questionNumberElement.textContent = currentQuestionIndex + 1;
             questionCounterElement.textContent = `${currentQuestionIndex + 1}/${questions.length}`;
+            
             optionsContainer.innerHTML = '';
 
             const shuffled = q.options.map((text, i) => ({ text, isCorrect: i === q.correct }));
