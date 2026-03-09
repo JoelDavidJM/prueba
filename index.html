@@ -31,7 +31,6 @@
         .question-card { background-color: #ffda79; border-radius: 25px; padding: 40px; margin-bottom: 40px; border: 8px solid #ffb347; position: relative; box-shadow: 0 10px 20px rgba(255,179,71,0.3); }
         .question-number { position: absolute; top: -20px; left: 30px; background-color: #ff7b3d; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 2rem; font-weight: bold; border: 5px solid white; box-shadow: 0 5px 15px rgba(255,123,61,0.4); }
         .question-text { font-size: 2.2rem; color: #333; line-height: 1.4; text-align: center; padding-top: 10px; }
-
         .options-container { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin-bottom: 40px; }
         .option { background: linear-gradient(145deg, #ffffff, #f0f0f0); border-radius: 25px; padding: 30px 20px; font-size: 1.8rem; color: #333; cursor: pointer; transition: all 0.4s ease; text-align: center; min-height: 140px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; box-shadow: 0 8px 15px rgba(0,0,0,0.1); border: 5px solid transparent; }
         .option::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 10px; background: linear-gradient(90deg, #ff7b3d, #ffda79); transform: translateY(-100%); transition: transform 0.3s ease; }
@@ -112,7 +111,6 @@
             <div class="question-card">
                 <div class="question-number" id="question-number">1</div>
                 <div class="question-text" id="question-text">Cargando pregunta...</div>
-
             </div>
             <div class="options-container" id="options-container"></div>
             <div class="feedback-container" id="feedback-container">
@@ -141,114 +139,114 @@
         
         const questions = [
             {
-                question: "¿Qué hace border-top-right-radius: 100%?",
+                question: "¿Para qué sirve margin en CSS?",
                 options: [
-                    "Pone un borde grueso en la esquina superior derecha",
-                    "Redondea completamente solo la esquina superior derecha del elemento",
-                    "Hace que el elemento sea completamente circular",
-                    "Empuja el elemento hacia la esquina superior derecha de la pantalla"
+                    "Para agregar espacio INTERIOR entre el contenido y el borde",
+                    "Para agregar espacio EXTERIOR alrededor del elemento, separándolo de otros",
+                    "Para poner color de fondo al elemento",
+                    "Para definir el tamaño del borde"
                 ],
                 correct: 1,
-                explanation: "¡Correcto! 🌿 border-top-right-radius: 100% redondea por completo solo la esquina superior derecha del elemento. En el CSS de la flor, combinado con border-right (solo borde derecho visible), crea esa forma curva característica de la punta del pasto."
+                explanation: "¡Correcto! 🌿 margin es el espacio de FUERA del elemento. Es la distancia entre ese elemento y los demás que lo rodean."
             },
             {
-                question: "¿Qué hace filter: blur(0.1vmin)?",
+                question: "¿Para qué sirve padding en CSS?",
                 options: [
-                    "Hace el elemento completamente invisible",
-                    "Aplica un desenfoque muy suave que da sensación de profundidad y suaviza los bordes",
-                    "Mueve el elemento 0.1vmin hacia la izquierda",
-                    "Hace que el elemento parpadee ligeramente"
+                    "Para separar el elemento de otros elementos vecinos",
+                    "Para añadir espacio INTERIOR entre el contenido y el borde del elemento",
+                    "Para redondear los bordes del elemento",
+                    "Para centrar el texto dentro del elemento"
                 ],
                 correct: 1,
-                explanation: "¡Muy bien! 🌌 filter: blur() aplica un desenfoque gaussiano al elemento. Con solo 0.1vmin el efecto es muy sutil, casi imperceptible, pero da una suavidad al fondo de la noche que lo hace más realista y menos pixelado."
+                explanation: "¡Muy bien! 📦 padding es el espacio de DENTRO del elemento, entre su contenido y su borde. Como el relleno de una caja."
             },
             {
-                question: "¿Qué hace bottom: -30px en un elemento con position: absolute?",
+                question: "¿Para qué sirve el pseudo-elemento ::after?",
                 options: [
-                    "Mueve el elemento 30px hacia arriba dentro del contenedor",
-                    "Sube el elemento 30px desde el suelo",
-                    "Desplaza el elemento 30px por debajo del borde inferior del contenedor, saliendo parcialmente fuera",
-                    "Añade un margen de 30px en la parte inferior"
+                    "Para aplicar estilos al elemento siguiente en el HTML",
+                    "Para crear un elemento decorativo virtual al FINAL del contenido, sin escribir HTML",
+                    "Para ejecutar una animación después de un clic",
+                    "Para añadir estilos solo cuando la página termina de cargar"
+                ],
+                correct: 1,
+                explanation: "¡Brillante! ✨ ::after crea un elemento invisible justo al final del elemento, sin tocar el HTML. Siempre necesita content: '' para funcionar. Se usa para decoraciones, formas y efectos visuales."
+            },
+            {
+                question: "¿Para qué sirve position: absolute?",
+                options: [
+                    "Para fijar el elemento en pantalla aunque se haga scroll",
+                    "Para posicionar el elemento con coordenadas exactas (top, left...) sacándolo del flujo normal",
+                    "Para que el elemento ocupe todo el ancho de la página",
+                    "Para centrar el elemento automáticamente"
+                ],
+                correct: 1,
+                explanation: "¡Perfecto! 📌 position: absolute saca el elemento del flujo normal y lo coloca exactamente donde tú quieras usando top, bottom, left o right, dentro de su contenedor."
+            },
+            {
+                question: "¿Para qué sirve z-index?",
+                options: [
+                    "Para controlar el zoom del elemento",
+                    "Para definir qué elemento aparece encima cuando dos se superponen",
+                    "Para animar el elemento en el eje Z",
+                    "Para ordenar los elementos de mayor a menor tamaño"
+                ],
+                correct: 1,
+                explanation: "¡Excelente! 🗂️ z-index controla el orden de capas. El elemento con el número más alto aparece encima de los demás, como apilar papeles."
+            },
+            {
+                question: "¿Para qué sirve display: flex?",
+                options: [
+                    "Para hacer que el elemento sea invisible",
+                    "Para activar Flexbox y poder alinear y distribuir los elementos hijos fácilmente",
+                    "Para hacer que el elemento se estire al 100% de la pantalla",
+                    "Para convertir el elemento en un bloque fijo"
+                ],
+                correct: 1,
+                explanation: "¡Super! 💪 display: flex activa Flexbox, que permite organizar, alinear y distribuir los elementos hijos de forma sencilla en filas o columnas."
+            },
+            {
+                question: "¿Para qué sirve overflow: hidden?",
+                options: [
+                    "Para hacer invisible el elemento completo",
+                    "Para ocultar y cortar todo el contenido que se salga de los límites del elemento",
+                    "Para añadir scroll cuando el contenido es muy largo",
+                    "Para esconder el elemento detrás de otros"
+                ],
+                correct: 1,
+                explanation: "¡Muy bien! ✂️ overflow: hidden corta todo lo que sobresalga del elemento, como unas tijeras en sus bordes. Muy útil para crear formas y evitar que el contenido se desborde."
+            },
+            {
+                question: "¿Para qué sirve animation-delay?",
+                options: [
+                    "Para definir cuánto dura la animación",
+                    "Para pausar la animación a la mitad",
+                    "Para esperar un tiempo antes de que la animación empiece",
+                    "Para repetir la animación con pausa entre repeticiones"
                 ],
                 correct: 2,
-                explanation: "¡Perfecto! 📐 Con bottom negativo el elemento sale por debajo del borde del contenedor. En el CSS de las flores, el círculo decorativo queda medio escondido saliendo por abajo, creando ese efecto de burbuja asomando en la esquina."
+                explanation: "¡Correcto! ⏳ animation-delay es el tiempo de espera ANTES de que la animación arranque. Por ejemplo, animation-delay: 2s espera 2 segundos antes de comenzar."
             },
             {
-                question: "¿Qué hace opacity: 0.3?",
+                question: "¿Para qué sirve border-radius?",
                 options: [
-                    "Hace el elemento 3 veces más transparente que lo normal",
-                    "Hace que el elemento sea un 30% visible, quedando muy transparente",
-                    "Aplica un 30% de color oscuro encima del elemento",
-                    "Reduce el tamaño del elemento al 30%"
+                    "Para añadir un borde de color al elemento",
+                    "Para redondear las esquinas del elemento",
+                    "Para rotar el elemento ciertos grados",
+                    "Para definir el grosor del borde"
                 ],
                 correct: 1,
-                explanation: "¡Excelente! 👻 opacity va de 0 (invisible) a 1 (completamente visible). Con 0.3 el elemento es solo un 30% opaco, quedando muy transparente. Así las nebulosas del fondo se ven como manchas de color suaves y etéreas en el cielo nocturno."
+                explanation: "¡Perfecto! 🔵 border-radius redondea las esquinas del elemento. Con un valor pequeño quedan suaves, y con 50% en un elemento cuadrado se convierte en un círculo perfecto."
             },
             {
-                question: "¿Qué hace box-shadow: inset 0 0 2px rgba(0,0,0,0.7)?",
+                question: "¿Para qué sirve transform-origin?",
                 options: [
-                    "Pone una sombra exterior que rodea el elemento por fuera",
-                    "Pone una sombra interior dentro del propio elemento, simulando profundidad",
-                    "Crea un borde oscuro alrededor del elemento",
-                    "Hace que el elemento se vea hundido en la pantalla"
+                    "Para mover el elemento a una posición de origen",
+                    "Para definir el punto desde donde ocurren las transformaciones como rotate o scale",
+                    "Para centrar el elemento en su contenedor",
+                    "Para resetear todas las transformaciones aplicadas"
                 ],
                 correct: 1,
-                explanation: "¡Brillante! 🌿 La palabra clave inset hace que la sombra se dibuje dentro del elemento en lugar de fuera. Esto da al tallo de la flor un efecto de volumen y profundidad, como si fuera un tallo real con luz incidiendo desde un lado."
-            },
-            {
-                question: "¿Qué hace transform-origin: bottom center?",
-                options: [
-                    "Mueve el elemento al centro inferior de la pantalla",
-                    "Hace que las transformaciones como rotate o scale ocurran desde la parte inferior del elemento",
-                    "Centra el elemento dentro de su contenedor en la parte de abajo",
-                    "Fija el elemento al fondo de la página"
-                ],
-                correct: 1,
-                explanation: "¡Muy bien! 📌 transform-origin define el punto de referencia desde donde se aplican rotate, scale, etc. Con bottom center, la hoja rota desde su base (donde se une al tallo), igual que las hojas reales crecen y se abren desde su punto de unión con la rama."
-            },
-            {
-                question: "¿Qué hace pointer-events: none?",
-                options: [
-                    "Hace que el elemento no se pueda ver con el ratón encima",
-                    "El elemento no reacciona a ningún clic ni evento del ratón, el cursor lo atraviesa como si no existiera",
-                    "Desactiva las animaciones cuando el usuario mueve el ratón",
-                    "Convierte el cursor en una flecha cuando pasa por encima"
-                ],
-                correct: 1,
-                explanation: "¡Correcto! 🖱️ pointer-events: none hace que el elemento sea completamente invisible para el ratón. Los clics y hovers lo atraviesan y llegan a los elementos de abajo. Perfecto para capas decorativas de fondo como las estrellas, que no deben interferir con la interacción."
-            },
-            {
-                question: "En un @keyframes, ¿qué representan los porcentajes como 0%, 50% y 100%?",
-                options: [
-                    "El porcentaje de velocidad de la animación en ese momento",
-                    "El porcentaje del tamaño del elemento en cada punto",
-                    "Los puntos en el tiempo de la animación: 0% es el inicio, 100% es el final",
-                    "El porcentaje de opacidad que tiene el elemento"
-                ],
-                correct: 2,
-                explanation: "¡Perfecto! ⏱️ En @keyframes los porcentajes representan momentos en el tiempo de la animación. 0% es justo cuando empieza, 50% es a la mitad, 100% es cuando termina. Así puedes controlar exactamente qué aspecto tiene el elemento en cada etapa."
-            },
-            {
-                question: "¿Qué hace radial-gradient(circle, rgba(138,43,226,0.6), transparent)?",
-                options: [
-                    "Crea un degradado que va de izquierda a derecha en forma de círculo",
-                    "Crea un degradado que empieza con color morado en el centro y se desvanece hacia los bordes",
-                    "Dibuja un círculo morado sólido sin transparencia",
-                    "Hace que el fondo cambie de color cada vez que el usuario hace clic"
-                ],
-                correct: 1,
-                explanation: "¡Brillante! 🟣 radial-gradient crea un degradado que irradia desde el centro hacia afuera. Con circle el centro es morado (rgba con 0.6 de opacidad) y se va volviendo transparente hacia los bordes. Combinado con filter: blur(60px) crea ese efecto de nebulosa difusa y etérea."
-            },
-            {
-                question: "¿Qué consigue usar background-color: rgba(0,0,0,0.6) junto a filter: blur(1.5vmin)?",
-                options: [
-                    "Pone el elemento completamente negro e invisible",
-                    "Crea una capa oscura y difuminada que simula sombra y da profundidad al elemento de abajo",
-                    "Añade un borde negro borroso alrededor del elemento",
-                    "Hace que el elemento brille con luz negra"
-                ],
-                correct: 1,
-                explanation: "¡Excelente! 🌿 rgba(0,0,0,0.6) es negro con 60% de opacidad. Al combinarlo con filter: blur() borroso, crea una sombra suave y realista que da profundidad y volumen. Es una técnica muy usada en el CSS de las flores para que el pasto parezca tener dimensión."
+                explanation: "¡Brillante! 📍 transform-origin es el punto de anclaje de las transformaciones. Por defecto es el centro del elemento, pero puedes cambiarlo, por ejemplo a bottom center para que rote desde su base."
             }
         ];
         
@@ -264,7 +262,6 @@
         const questionCounterElement = document.getElementById('question-counter');
         const questionNumberElement = document.getElementById('question-number');
         const questionTextElement = document.getElementById('question-text');
-
         const optionsContainer = document.getElementById('options-container');
         const feedbackContainer = document.getElementById('feedback-container');
         const feedbackIcon = document.getElementById('feedback-icon');
